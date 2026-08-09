@@ -347,8 +347,8 @@
             const target = +counter.getAttribute('data-target');
             const duration = 2000;
             const startTime = performance.now();
-            // Check if parent contains '+'
-            const hasPlus = counter.parentElement ? counter.parentElement.textContent.includes('+') : false;
+            // Use data attribute instead of parent text content to avoid duplicate plus signs
+            const hasPlus = counter.hasAttribute('data-plus');
 
             const updateCounter = (currentTime) => {
                 const elapsedTime = currentTime - startTime;
@@ -356,7 +356,8 @@
                 const easedProgress = easeOutQuad(progress);
                 
                 const currentValue = Math.floor(easedProgress * target);
-                counter.textContent = currentValue + (hasPlus ? '+' : '');
+                // Plus sign appears ONLY after counter finishes
+                counter.textContent = currentValue;
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
@@ -784,3 +785,4 @@
     }
 
 })();
+
