@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Malthi Pavan Ramesh – Full Stack Developer specializing in React.js, Next.js, Node.js, PostgreSQL, MongoDB, and AI-powered web applications.">
+    <meta property="og:title" content="Portfolio | Malthi Pavan Ramesh">
+    <meta property="og:description" content="Portfolio of Malthi Pavan Ramesh – Full Stack Developer specializing in React.js, Next.js, Node.js, PostgreSQL, MongoDB, and AI-powered web applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://malthipavanramesh.dev/">
+    <meta name="twitter:title" content="Portfolio | Malthi Pavan Ramesh">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Tailwind Custom Theme -->
+    <style type="text/tailwindcss">
+    @theme {
+      --color-bg-primary: #0B1120;
+      --color-bg-card: rgba(255,255,255,0.06);
+      --color-primary: #3B82F6;
+      --color-secondary: #06B6D4;
+      --color-accent: #8B5CF6;
+      --color-text: #F8FAFC;
+      --color-text-muted: #94A3B8;
+      --color-border: rgba(255,255,255,0.08);
+      --font-sans: 'Inter', sans-serif;
+    }
+    </style>
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bg-primary text-text font-sans overflow-x-hidden antialiased" style="font-family: 'Inter', sans-serif;">
+
+    <!-- 3. PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bg-primary transition-opacity duration-500">
+        <div class="w-16 h-16 border-4 border-border border-t-primary rounded-full animate-spin mb-4"></div>
+        <p class="text-text-muted font-medium tracking-widest uppercase text-sm">Loading...</p>
+    </div>
+
+    <!-- 2. CURSOR FOLLOWER -->
+    <div class="cursor-dot hidden md:block fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[100] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
+    <div class="cursor-ring hidden md:block fixed w-8 h-8 border border-primary/50 rounded-full pointer-events-none z-[100] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out"></div>
+
+    <!-- MOUSE GLOW -->
+    <div class="mouse-glow hidden md:block"></div>
+
+    <!-- 1. SCROLL PROGRESS BAR -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[90] bg-transparent">
+        <div id="scroll-progress" class="h-full w-0 bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-150 ease-out"></div>
+    </div>
+
+    <!-- 5. NAVBAR -->
+    <nav id="navbar" class="navbar fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300 bg-bg-card/80 backdrop-blur-lg border border-border rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+        <div class="px-6">
+            <div class="flex items-center justify-center h-16">
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex flex-1 justify-center">
+                    <div class="flex items-center space-x-2">
+                        <a href="#hero" class="nav-link text-text hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="hero">Home</a>
+                        <a href="#about" class="nav-link text-text-muted hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="about">About</a>
+                        <a href="#skills" class="nav-link text-text-muted hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="skills">Skills</a>
+                        <a href="#experience" class="nav-link text-text-muted hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="experience">Experience</a>
+                        <a href="#projects" class="nav-link text-text-muted hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="projects">Projects</a>
+                        <a href="#contact" class="nav-link text-text-muted hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium relative group" data-section="contact">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-text-muted hover:text-text focus:outline-none p-2 rounded-md focus:ring-2 focus:ring-primary" aria-expanded="false" aria-label="Toggle navigation menu">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6 menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="w-6 h-6 x-icon hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-bg-primary/95 backdrop-blur-xl flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+        <div class="flex flex-col items-center space-y-6 text-xl">
+            <a href="#hero" class="nav-link text-text font-medium hover:text-primary transition-colors" data-section="hero">Home</a>
+            <a href="#about" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="about">About</a>
+            <a href="#skills" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="skills">Skills</a>
+            <a href="#experience" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="experience">Experience</a>
+            <a href="#projects" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="projects">Projects</a>
+            <a href="#contact" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="contact">Contact</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- 6. HERO SECTION -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div class="grid-bg absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                <div class="blob blob-1 absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-pulse"></div>
+                <div class="blob blob-2 absolute top-1/3 right-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70" style="animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 1s;"></div>
+                <div class="blob blob-3 absolute bottom-1/4 left-1/2 w-80 h-80 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50" style="animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite 2s;"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center">
+                <div class="animate-on-scroll" data-animation="fade-up">
+                    <p class="text-secondary font-semibold tracking-wide mb-4 flex items-center justify-center gap-2">
+                        Hi, I'm <span class="text-2xl animate-bounce">👋</span>
+                    </p>
+                </div>
+                
+                <h1 class="animate-on-scroll text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight" data-animation="fade-up" style="animation-delay: 100ms;">
+                    <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Malthi Pavan Ramesh</span>
+                </h1>
+                
+                <div class="animate-on-scroll h-12 md:h-16 mb-6" data-animation="fade-up" style="animation-delay: 200ms;">
+                    <h2 class="text-2xl md:text-4xl font-bold text-text">
+                        <span id="typed-text"></span><span class="cursor inline-block w-[3px] h-[1em] bg-primary ml-1 align-middle animate-pulse"></span>
+                    </h2>
+                </div>
+                
+                <p class="animate-on-scroll text-text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" data-animation="fade-up" style="animation-delay: 300ms;">
+                    I build modern, scalable, and user-focused web applications using React, Next.js, Node.js, PostgreSQL, MongoDB, and AI technologies.
+                </p>
+                
+                <div class="animate-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4 mb-12" data-animation="fade-up" style="animation-delay: 400ms;">
+                    <a href="#projects" class="group flex items-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] focus:ring-2 focus:ring-offset-2 focus:ring-offset-bg-primary focus:ring-primary">
+                        <i data-lucide="folder-open" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+                        View Projects
+                    </a>
+                </div>
+
+                <div class="animate-on-scroll flex items-center justify-center gap-6" data-animation="fade-up" style="animation-delay: 500ms;">
+                    <a href="mailto:pavanrameshmalthi886@gmail.com" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="Send an Email">
+                        <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="GitHub Profile">
+                        <svg viewBox="0 0 32 32" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-text-muted hover:text-primary transition-colors" aria-label="Scroll down to About section">
+                    <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 7. ABOUT SECTION -->
+        <section id="about" class="py-24 relative z-10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
+                        About Me
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full"></span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Visual Column -->
+                    <div class="animate-on-scroll order-2 lg:order-1" data-animation="fade-right">
+                        <div class="about-visual relative w-full aspect-square md:aspect-[4/3] rounded-2xl bg-bg-card border border-border overflow-hidden shadow-xl group flex items-center justify-center p-8">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <!-- Decorative code abstract representation -->
+                            <div class="relative z-10 w-full max-w-sm">
+                                <div class="flex items-center gap-2 mb-4 bg-bg-primary/50 p-2 rounded-t-lg border-b border-border">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="font-mono text-sm space-y-2 text-text-muted bg-bg-primary/30 p-4 rounded-b-lg border border-t-0 border-border">
+                                    <p><span class="text-accent">const</span> <span class="text-primary">developer</span> = {</p>
+                                    <p class="pl-4">name: <span class="text-green-400">'Malthi Pavan Ramesh'</span>,</p>
+                                    <p class="pl-4">role: <span class="text-green-400">'Full Stack Developer'</span>,</p>
+                                    <p class="pl-4">passion: [<span class="text-green-400">'Web Dev'</span>, <span class="text-green-400">'AI'</span>, <span class="text-green-400">'Problem Solving'</span>],</p>
+                                    <p class="pl-4">isContinuouslyLearning: <span class="text-secondary">true</span></p>
+                                    <p>};</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Column -->
+                    <div class="animate-on-scroll order-1 lg:order-2" data-animation="fade-left">
+                        <div class="space-y-6 text-text-muted text-lg leading-relaxed">
+                            <p>
+                                I'm a passionate Full Stack Developer with a strong foundation in modern web technologies. I specialize in building scalable, performant, and user-centric applications that solve real-world problems.
+                            </p>
+                            <p>
+                                My journey in tech has been driven by curiosity and a desire to create meaningful digital experiences. From crafting pixel-perfect frontends with React and Next.js to architecting robust backends with Node.js and PostgreSQL, I enjoy working across the full stack.
+                            </p>
+                            <p>
+                                I'm also deeply interested in AI technologies, exploring how tools like Gemini AI can enhance developer productivity and create smarter applications. I believe in continuous learning and staying at the forefront of technology.
+                            </p>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-2 gap-4 mt-10">
+                            <div class="stat-card bg-bg-card border border-border p-5 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="p-2 bg-primary/20 text-primary rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="folder-check" class="w-5 h-5"></i></div>
+                                    <h3 class="text-2xl font-bold text-text"><span class="stat-number" data-target="10">0</span>+</h3>
+                                </div>
+                                <p class="text-sm text-text-muted">Projects Completed</p>
+                            </div>
+                            <div class="stat-card bg-bg-card border border-border p-5 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="p-2 bg-secondary/20 text-secondary rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                                    <h3 class="text-2xl font-bold text-text"><span class="stat-number" data-target="15">0</span>+</h3>
+                                </div>
+                                <p class="text-sm text-text-muted">Technologies Learned</p>
+                            </div>
+                            <div class="stat-card bg-bg-card border border-border p-5 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="p-2 bg-accent/20 text-accent rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
+                                    <h3 class="text-2xl font-bold text-text"><span class="stat-number" data-target="1">0</span></h3>
+                                </div>
+                                <p class="text-sm text-text-muted">Internship Completed</p>
+                            </div>
+                            <div class="stat-card bg-bg-card border border-border p-5 rounded-xl hover:bg-white/5 transition-colors group">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="p-2 bg-green-500/20 text-green-400 rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="git-branch" class="w-5 h-5"></i></div>
+                                    <h3 class="text-2xl font-bold text-text"><span class="stat-number" data-target="10">0</span>+</h3>
+                                </div>
+                                <p class="text-sm text-text-muted">GitHub Repositories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SKILLS SECTION -->
+        <section id="skills" class="py-24 relative z-10 bg-bg-primary/50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
+                        Skills & Technologies
+                        
+                    </h2>
+                </div>
+
+                <!-- Tabs -->
+                <div class="animate-on-scroll flex flex-wrap justify-center gap-3 mb-12" data-animation="fade-up">
+                    <button class="skill-tab active px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-primary text-white" data-category="languages">Languages</button>
+                    <button class="skill-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-bg-card  text-text-muted hover:text-text" data-category="frontend">Frontend</button>
+                    <button class="skill-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-bg-card  text-text-muted hover:text-text" data-category="backend">Backend</button>
+                    <button class="skill-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-bg-card  text-text-muted hover:text-text" data-category="database">Database</button>
+                    <button class="skill-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-bg-card  text-text-muted hover:text-text" data-category="ai">AI</button>
+                    <button class="skill-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-bg-card  text-text-muted hover:text-text" data-category="tools">Tools</button>
+                </div>
+
+                <!-- Skill Cards Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 skill-container min-h-[300px]">
+                    <!-- Languages -->
+                    <div class="skill-card animate-on-scroll bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="languages" data-animation="scale-in">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#A8B9CC"/><text x="16" y="21" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF" font-family="Arial">C</text></svg></div>
+                        <h3 class="font-medium text-text">C</h3>
+                        
+                    </div>
+                    <div class="skill-card animate-on-scroll bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="languages" data-animation="scale-in" style="animation-delay: 100ms;">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M15.9 2c-1.5 0-2.8.3-3.9.8C9.5 4 9.2 6.2 9.2 7.5v2.8h6.8v.9H7.1c-2 0-3.7 1.1-4.3 3.3-.6 2.5-.7 4.1 0 6.7.5 1.9 1.7 3.3 3.7 3.3h2.4v-3c0-2.3 2-4.3 4.3-4.3h6.8c1.9 0 3.4-1.6 3.4-3.4V7.5c0-1.8-1.5-3.2-3.4-3.7C18.7 2.3 17.3 2 15.9 2zm-3.7 3.2c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3-1.3-.6-1.3-1.3.6-1.3 1.3-1.3z" fill="#3776AB"/><path d="M24.9 11.2v2.9c0 2.4-2 4.4-4.3 4.4h-6.8c-1.9 0-3.4 1.6-3.4 3.4v6.3c0 1.8 1.6 2.9 3.4 3.4 2.2.6 4.3.7 6.8 0 1.7-.5 3.4-1.4 3.4-3.4v-2.5h-6.8v-.9h10.2c2 0 2.7-1.4 3.4-3.3.7-2 .7-3.8 0-6.7-.5-2-1.4-3.3-3.4-3.3h-2.5zm-3.8 13.3c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3-1.3-.6-1.3-1.3.6-1.3 1.3-1.3z" fill="#FFD43B"/></svg></div>
+                        <h3 class="font-medium text-text">Python</h3>
+                        
+                    </div>
+                    <div class="skill-card animate-on-scroll bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="languages" data-animation="scale-in" style="animation-delay: 200ms;">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M12.3 24.2s-1.3.8.9 1c2.7.3 4-.3 6.9-1a11 11 0 0 0 2 1c-7 3-15.9-.2-9.8-1zm-.8-3.7s-1.5 1.1.7 1.3c2.9.3 5.1.3 9-1.1a5 5 0 0 0 1.7 1c-8.5 2.5-18-.2-11.4-.2z" fill="#ED8B00"/><path d="M18 16.5c2-2.3-.5-4.3-.5-4.3s4.7 2.4 2.5 5.5c-2 2.9-3.6 4.3 4.8 9.3 0 0-13.2 3.3-6.8-10.5z" fill="#ED8B00"/><path d="M25.4 26.5s1 .8-1.1 1.4c-3.8 1.1-15.8 1.5-19.2 0-1.2-.5 1.1-1.2 1.8-1.4.8-.2 1.2-.1 1.2-.1-1.4-1-9 2-3.9 2.8 14 2.4 25.5-1 21.2-2.7zm-13-9.5s-6.4 1.5-2.3 2.1c1.8.2 5.3.2 8.6-.1 2.7-.3 5.4-.9 5.4-.9s-1 .4-1.6.8c-6.6 1.7-19.3.9-15.6-.8 3.1-1.5 5.5-1.1 5.5-1.1zm11.7 6.5c6.7-3.5 3.6-6.8 1.4-6.4-.5.1-.8.2-.8.2s.2-.3.6-.5c4.4-1.6 7.8 4.5-1.4 6.9 0 0 .1-.1.2-.2z" fill="#5382A1"/></svg></div>
+                        <h3 class="font-medium text-text">Java</h3>
+                        
+                    </div>
+                    <div class="skill-card animate-on-scroll bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="languages" data-animation="scale-in" style="animation-delay: 300ms;">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><rect width="32" height="32" rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg></div>
+                        <h3 class="font-medium text-text">JavaScript</h3>
+                        
+                    </div>
+
+                    <!-- Frontend (Initially hidden, handled by JS if possible or via CSS classes, but here we render all and filter via JS) -->
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="frontend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#E44D26"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#F16529"/><path d="M16 13.6h-4.2l-.3-3.2H16V7.3H8.3l.1.8.8 9.5H16zm0 8.6l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 13.6v3.1h3.9l-.4 4.1L16 22.2v3.2l7-1.9.1-.6.8-9.3.1-.8H16zm0-6.3v3.1h7.4l.1-.6.1-1.7.1-.8z" fill="#fff"/></svg></div>
+                        <h3 class="font-medium text-text">HTML</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="frontend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#1572B6"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#33A9DC"/><path d="M16 16.7h-4.2l-.3-3.2H16V10.3H8.1l.1.8.9 9.5h7zm0 6.5l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 16.7v3.2h3.7l-.4 4-3.3.9v3.2l7-1.9.1-.6.8-9.5.1-.8H16zm0-6.4v3.2h7.4l.3-3.2z" fill="#fff"/></svg></div>
+                        <h3 class="font-medium text-text">CSS</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="frontend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><circle cx="16" cy="16" r="2.8" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse cx="16" cy="16" rx="11" ry="4.2"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(120 16 16)"/></g></svg></div>
+                        <h3 class="font-medium text-text">React</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="frontend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#000" stroke="#fff" stroke-width="1"/><path d="M12.5 10.5v11l8.5-11" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="21.5" y1="10.5" x2="21.5" y2="17" stroke="url(#nextGrad)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="nextGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs></svg></div>
+                        <h3 class="font-medium text-text">Next.js</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="frontend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" fill="#06B6D4" role="img" aria-hidden="true"><path d="M16 6.4c-4.3 0-6.9 2.1-8 6.4 1.6-2.1 3.5-2.9 5.6-2.4 1.2.3 2.1 1.2 3 2.2 1.5 1.6 3.3 3.4 7.1 3.4 4.3 0 6.9-2.1 8-6.4-1.6 2.1-3.5 2.9-5.6 2.4-1.2-.3-2.1-1.2-3-2.2C21.6 8.2 19.8 6.4 16 6.4zm-8 9.6c-4.3 0-6.9 2.1-8 6.4 1.6-2.1 3.5-2.9 5.6-2.4 1.2.3 2.1 1.2 3 2.2 1.5 1.6 3.3 3.4 7.1 3.4 4.3 0 6.9-2.1 8-6.4-1.6 2.1-3.5 2.9-5.6 2.4-1.2-.3-2.1-1.2-3-2.2-1.5-1.6-3.3-3.4-7.1-3.4z"/></svg></div>
+                        <h3 class="font-medium text-text">Tailwind CSS</h3>
+                        
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="backend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M16 2.3L3.2 9.6v14.8L16 31.7l12.8-7.3V9.6z" fill="#339933"/><path d="M16 2.3v29.4l12.8-7.3V9.6z" fill="#2E7D32"/><path d="M16 18.5l-5.3-3v-6l5.3-3 5.3 3v6z" fill="#fff" opacity="0.15"/></svg></div>
+                        <h3 class="font-medium text-text">Node.js</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="backend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#333"/><text x="16" y="20" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff" font-family="Arial">Ex</text></svg></div>
+                        <h3 class="font-medium text-text">Express.js</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="backend">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" fill="none" stroke="#818CF8" stroke-width="2" stroke-linecap="round" role="img" aria-hidden="true"><path d="M6 16h4m12 0h4M16 6v4m0 12v4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l1.5 1.5m8 8l1.5 1.5m-11 0l1.5-1.5m8-8l1.5-1.5"/></svg></div>
+                        <h3 class="font-medium text-text">REST APIs</h3>
+                        
+                    </div>
+
+                    <!-- Database -->
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="database">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M17.2 3.7s-1.6 2-1.7 2.2c-3 4.3-2.4 8.5-0.6 12.7.1.3.3.6.4.9v.1s.1 0 .1-.1c.2-.4.3-.9.4-1.3.1-.5.6-.6.9-.2.5.7.7 1.5.7 2.4 0 .4 0 .9-.1 1.3 0 .2 0 .4-.1.6v.2l.1.1c.7-1 1.2-2.2 1.5-3.4.9-3.4.4-6.6-1.3-9.6-.3-.5-.7-1-.9-1.5-.2-.3-.3-.7-.5-1-.1-.3-.2-.7-.4-1l-.3-.6-.1-.4v-.2l-.1-.2z" fill="#47A248"/><path d="M15.6 22.4c-.1-.5-.4-1-.8-1.3-1-1-2-2-2.7-3.3-1.3-2.5-1.3-5-.3-7.5.1-.2 0-.1-.1 0-2 2.8-3 5.9-2 9.3.4 1.2 1.1 2.2 2 3.1.4.4.8.7 1.1 1.2.3.6.3 1.2.3 1.9l.4 2.3c0 .1.1.1.5-1.3.8-2.5 1-3.3.2-.9-.4-1.5-1-2.5z" fill="#47A248"/></svg></div>
+                        <h3 class="font-medium text-text">MongoDB</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="database">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M23.3 24.5c-.3 2.1.5 2.6 1.7 2.8l.7.1c1.6.1 2.5-.5 3.1-1.3.7-1 1.2-2.7 1.1-4.8 0-.4 0-.7-.1-1.1-1.1 2.8-3.9 3.8-6.5 4.3z" fill="#336791"/><path d="M27.2 17c-.1-1.5-.2-2.2.6-3.5l.2-.3c.4-.7.8-1.5.8-3.4 0-3.5-2.5-6.4-3.3-7.2A11 11 0 0 0 16 0c-3.5 0-6.2 1.6-7.7 2.7 1-.5 3.3-1.3 5.6-1 3 .4 4 1.4 4.5 2.2L17 6.8l-1.3 4.7c-.2.8-.6 1.8-.4 3.4.1.7.4 2.7 2 3.5 1 .5 2.4.3 2.7.2l.2.8c.3 1 .6 2 .6 3.1 0 .8-.1 1.5-.4 2.1l.2-.1c3-1 5.9-2.3 6.6-5.3-.3-1.1-.2-1.8 0-2.2zM14 13.5c0 .1-.7.1-.8.1-1.2 0-2.1-.3-2.5-.7l.3-1.2c.3.5 1.4 1 2.5.8l.4.4.1.6z" fill="#336791"/><path d="M12.3 7.5c-2.9.3-4.7 2.2-5.3 3.8-.7 2-.3 4 .5 5.2 1 1.3 2.7 2.2 4.3 2.3.7 0 1.2-.1 1.6-.3-.2-.8-.4-1.7-.3-2.8-1.2.2-2.1-.2-2.8-1-.6-.8-.8-1.8-.6-2.8.3-1.5 1.3-2.5 2.6-2.7h.4l-.4-1.7z" fill="#336791"/></svg></div>
+                        <h3 class="font-medium text-text">PostgreSQL</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="database">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" fill="none" stroke="#60A5FA" stroke-width="1.5" role="img" aria-hidden="true"><ellipse cx="16" cy="8" rx="10" ry="4"/><path d="M6 8v16c0 2.2 4.5 4 10 4s10-1.8 10-4V8"/><path d="M6 16c0 2.2 4.5 4 10 4s10-1.8 10-4"/></svg></div>
+                        <h3 class="font-medium text-text">SQL</h3>
+                        
+                    </div>
+
+                    <!-- AI -->
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="ai">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" role="img" aria-hidden="true"><path d="M16 3a10 10 0 0 1 10 10c0 3.5-1.8 6-4 8v3h-12v-3c-2.2-2-4-4.5-4-8A10 10 0 0 1 16 3z"/><path d="M12 28h8m-6 3h4"/><circle cx="12" cy="13" r="1.5" fill="#A78BFA" stroke="none"/><circle cx="20" cy="13" r="1.5" fill="#A78BFA" stroke="none"/><path d="M16 13v3m-2 2h4"/></svg></div>
+                        <h3 class="font-medium text-text text-center">Prompt Engineering</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="ai">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M16 2l2.4 8.4L26 13l-7.6 2.6L16 24l-2.4-8.4L6 13l7.6-2.6z" fill="#4285F4"/><path d="M24 6l1.2 4.2L29 11.5l-3.8 1.3L24 17l-1.2-4.2L19 11.5l3.8-1.3z" fill="#34A853" opacity="0.7"/><path d="M8 22l1 3.5 3.5 1.2-3.5 1.2L8 31.5l-1-3.5L3.5 26.8l3.5-1.2z" fill="#FBBC04" opacity="0.7"/></svg></div>
+                        <h3 class="font-medium text-text">Gemini AI</h3>
+                        
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="tools">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M29.5 14.7L17.3 2.5c-.8-.8-2-.8-2.8 0l-2.5 2.5 3.2 3.2a2.4 2.4 0 0 1 3 3l3 3a2.4 2.4 0 1 1-1.4 1.3l-2.8-2.8v7.5a2.4 2.4 0 1 1-2-0 2.4 2.4 0 0 1 .6-4.7V13a2.4 2.4 0 0 1-1.3-3.2L11.1 6.6l-8.6 8.6c-.8.8-.8 2 0 2.8l12.2 12.2c.8.8 2 .8 2.8 0L29.5 17.5c.8-.8.8-2 0-2.8" fill="#F05032"/></svg></div>
+                        <h3 class="font-medium text-text">Git</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="tools">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" fill="#FFFFFF" role="img" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg></div>
+                        <h3 class="font-medium text-text">GitHub</h3>
+                        
+                    </div>
+                    <div class="skill-card hidden bg-bg-card  rounded-xl p-4 flex flex-col items-center gap-4 hover:-translate-y-2 transition-all hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]" data-category="tools">
+                        <div class="p-3 bg-white/5 rounded-full flex items-center justify-center"><svg viewBox="0 0 32 32" class="w-6 h-6" role="img" aria-hidden="true"><path d="M23.5 2.5l-11 10L5.5 7l-3 2.3L12 16 2.5 22.7l3 2.3 7-5.5 11 10 6-2.8V5.3z" fill="#007ACC"/><path d="M23.5 2.5v27l6-2.8V5.3z" fill="#1A9FE0"/></svg></div>
+                        <h3 class="font-medium text-text">VS Code</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. EXPERIENCE SECTION -->
+        <section id="experience" class="py-24 relative z-10">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
+                        Experience
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+                    </h2>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative border-l border-border md:border-none">
+                    <!-- Desktop Center Line -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border transform -translate-x-1/2"></div>
+                    
+                    <!-- Single Experience Entry -->
+                    <div class="animate-on-scroll relative pl-8 md:pl-0 w-full md:w-1/2 md:ml-auto md:pr-0 md:pl-12 py-6" data-animation="fade-left">
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-[-5px] md:left-0 top-1/2 w-3 h-3 bg-primary rounded-full md:-translate-x-[calc(100%+3rem-0.375rem)] shadow-[0_0_10px_rgba(59,130,246,0.8)] z-10"></div>
+                        
+                        <div class="bg-bg-card border border-border border-l-4 border-l-primary rounded-xl p-6 md:p-8 hover:bg-white/5 transition-colors relative z-0">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+                                <div>
+                                    <h3 class="text-xl font-bold text-text mb-2 flex items-center gap-2">
+                                        <i data-lucide="briefcase" class="w-5 h-5 text-primary"></i> MERN Stack Development Intern
+                                    </h3>
+                                    <p class="text-text-muted font-medium text-lg">
+                                        Adhoc Network Tech
+                                    </p>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-semibold border border-primary/20 shrink-0">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i> Duration: 45 Days (2026)
+                                </span>
+                            </div>
+                            
+                            <p class="text-text-muted leading-relaxed text-sm md:text-base">
+                                Successfully completed a 45-day intensive internship focused on MERN Stack Development. Built responsive full-stack web applications using <span class="inline-block bg-white/5 text-cyan-400 px-1.5 rounded border border-white/10 font-medium">React</span>, <span class="inline-block bg-white/5 text-green-500 px-1.5 rounded border border-white/10 font-medium">Node.js</span>, <span class="inline-block bg-white/5 text-gray-300 px-1.5 rounded border border-white/10 font-medium">Express.js</span>, and <span class="inline-block bg-white/5 text-green-400 px-1.5 rounded border border-white/10 font-medium">MongoDB</span> while gaining practical experience with <span class="inline-block bg-white/5 text-indigo-400 px-1.5 rounded border border-white/10 font-medium">REST APIs</span>, authentication, database integration, <span class="inline-block bg-white/5 text-orange-400 px-1.5 rounded border border-white/10 font-medium">Git</span>/<span class="inline-block bg-white/5 text-white px-1.5 rounded border border-white/10 font-medium">GitHub</span>, debugging, and modern software development workflows. The internship strengthened my ability to develop real-world web applications and collaborate using industry-standard tools.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. PROJECTS SECTION -->
+        <section id="projects" class="py-24 relative z-10 bg-bg-primary/50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
+                        Featured Projects
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary rounded-full"></span>
+                    </h2>
+                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 (Featured) -->
+                    <div class="project-card animate-on-scroll md:col-span-2 group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors flex flex-col md:flex-row" data-animation="fade-up">
+                        <div class="project-image w-full md:w-1/2 relative bg-gradient-to-br from-bg-primary to-bg-card border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[300px] flex items-center justify-center">
+                            <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+                            <div class="relative z-10 w-2/3 aspect-video bg-bg-primary rounded-lg border border-border shadow-2xl flex flex-col overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="h-6 bg-white/5 border-b border-border flex items-center gap-1.5 px-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 p-4 flex items-center justify-center">
+                                    <i data-lucide="brain" class="w-16 h-16 text-primary opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-accent"></i> Full Stack Web Application
+                                </span>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">AI-Powered Mock Interview</h3>
+                            <p class="text-text-muted mb-6 leading-relaxed">
+                                An AI-powered mock interview platform that helps users prepare for technical and HR interviews. It generates interview questions, evaluates responses, and provides intelligent feedback using AI to improve interview performance.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">React.js</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">Next.js</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">JavaScript</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">Gemini AI</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">PostgreSQL</span>
+                            </div>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <a href="https://github.com/PavanRameshMalthi/AI-Powered-Mock-Interview.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
+                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-secondary/50 transition-colors flex flex-col" data-animation="fade-up" style="animation-delay: 100ms;">
+                        <div class="project-image w-full relative bg-gradient-to-br from-bg-primary to-bg-card border-b border-border overflow-hidden h-64 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-emerald-500/5 group-hover:bg-emerald-500/10 transition-colors"></div>
+                            <div class="relative z-10 w-3/4 aspect-[2/1] bg-bg-primary rounded-lg border border-border shadow-xl flex flex-col overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="h-4 bg-white/5 border-b border-border flex items-center gap-1.5 px-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 p-4 flex items-center justify-center">
+                                    <i data-lucide="file-text" class="w-12 h-12 text-emerald-400 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full border border-secondary/20">Web Application</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-secondary transition-colors">Resume Builder</h3>
+                            <p class="text-text-muted mb-6 text-sm leading-relaxed">
+                                A responsive Resume Builder that allows users to create professional resumes with a modern interface and instantly preview and download them.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">HTML</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">CSS</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://pavanrameshmalthi.github.io/RESUME-BUILDER/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-secondary font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/PavanRameshMalthi/RESUME-BUILDER.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg">
+                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-blue-400/50 transition-colors flex flex-col" data-animation="fade-up" style="animation-delay: 200ms;">
+                        <div class="project-image w-full relative bg-gradient-to-br from-bg-primary to-bg-card border-b border-border overflow-hidden h-64 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+                            <div class="relative z-10 w-3/4 aspect-[2/1] bg-bg-primary rounded-lg border border-border shadow-xl flex flex-col overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="h-4 bg-white/5 border-b border-border flex items-center gap-1.5 px-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 p-4 flex items-center justify-center">
+                                    <i data-lucide="cloud-sun" class="w-12 h-12 text-blue-400 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20">Web Application</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-blue-400 transition-colors">Weather Tracker</h3>
+                            <p class="text-text-muted mb-6 text-sm leading-relaxed">
+                                A responsive weather application that fetches and displays real-time weather information using a weather API with an intuitive and clean interface.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">HTML</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">CSS</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">JavaScript</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">Weather API</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://pavanrameshmalthi.github.io/WEATHER/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-blue-400 font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/PavanRameshMalthi/WEATHER.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg">
+                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-yellow-400/50 transition-colors flex flex-col" data-animation="fade-up" style="animation-delay: 100ms;">
+                        <div class="project-image w-full relative bg-gradient-to-br from-bg-primary to-bg-card border-b border-border overflow-hidden h-64 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors"></div>
+                            <div class="relative z-10 w-3/4 aspect-[2/1] bg-bg-primary rounded-lg border border-border shadow-xl flex flex-col overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="h-4 bg-white/5 border-b border-border flex items-center gap-1.5 px-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 p-4 flex items-center justify-center">
+                                    <i data-lucide="calculator" class="w-12 h-12 text-yellow-400 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-yellow-500/10 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full border border-yellow-500/20">Utility Application</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-yellow-400 transition-colors">SGPA to CGPA Calculator</h3>
+                            <p class="text-text-muted mb-6 text-sm leading-relaxed">
+                                A CGPA calculator that converts semester grades into cumulative CGPA with a clean interface and instant calculations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">HTML</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">CSS</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://pavanrameshmalthi.github.io/SCGPA-TO-CGPA/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-yellow-400 font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/PavanRameshMalthi/SCGPA-TO-CGPA.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg">
+                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-purple-400/50 transition-colors flex flex-col" data-animation="fade-up" style="animation-delay: 200ms;">
+                        <div class="project-image w-full relative bg-gradient-to-br from-bg-primary to-bg-card border-b border-border overflow-hidden h-64 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-purple-500/5 group-hover:bg-purple-500/10 transition-colors"></div>
+                            <div class="relative z-10 w-3/4 aspect-[2/1] bg-bg-primary rounded-lg border border-border shadow-xl flex flex-col overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="h-4 bg-white/5 border-b border-border flex items-center gap-1.5 px-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-red-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="flex-1 p-4 flex items-center justify-center">
+                                    <i data-lucide="list-todo" class="w-12 h-12 text-purple-400 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-purple-500/10 text-purple-400 text-xs font-bold px-3 py-1 rounded-full border border-purple-500/20">Web Application</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-purple-400 transition-colors">To-Do List</h3>
+                            <p class="text-text-muted mb-6 text-sm leading-relaxed">
+                                A task management application that allows users to create, update, organize, and delete daily tasks with a simple and responsive interface.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 mt-auto">
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">HTML</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">CSS</span>
+                                <span class="text-xs font-medium text-text-muted bg-white/5 px-3 py-1.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://github.com/PavanRameshMalthi/TO-DO-LIST.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
+                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. CONTACT SECTION -->
+        <section id="contact" class="py-24 relative z-10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full"></span>
+                    </h2>
+                    <p class="text-text-muted text-center max-w-2xl mt-4">Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Contact Cards -->
+                    <a href="mailto:pavanrameshmalthi886@gmail.com" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer animate-on-scroll" data-animation="fade-up" style="animation-delay: 100ms;">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-text font-bold mb-1">Email</h3>
+                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">Send me an email</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer animate-on-scroll" data-animation="fade-up" style="animation-delay: 200ms;">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
+                            <svg viewBox="0 0 32 32" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-text font-bold mb-1">GitHub</h3>
+                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">View my projects</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer md:col-span-2 lg:col-span-1 animate-on-scroll" data-animation="fade-up" style="animation-delay: 300ms;">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
+                            <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-text font-bold mb-1">LinkedIn</h3>
+                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">Let's connect professionally</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 12. FOOTER -->
+    <footer class="bg-bg-primary border-t border-border mt-12 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center">
+            <p class="text-text font-medium flex items-center gap-2 mb-6">
+                Designed & Developed by Malthi Pavan Ramesh
+            </p>
+            
+            <div class="flex items-center gap-6 mb-6">
+                <a href="mailto:pavanrameshmalthi886@gmail.com" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="Email">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="GitHub">
+                    <svg viewBox="0 0 32 32" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
+                </a>
+            </div>
+            
+            <p class="text-text-muted text-sm">
+                &copy; <span id="footer-year"></span> | All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 4. BACK TO TOP BUTTON -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-bg-card/80 backdrop-blur border border-border p-3 rounded-full text-text hover:text-primary hover:border-primary/50 shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Back to top">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Script connection -->
+    <script src="script.js"></script>
+    
+    <!-- Inline minimal script to ensure initialization if external fails or takes time -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            
+            // Set current year
+            const yearSpan = document.getElementById('footer-year');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
