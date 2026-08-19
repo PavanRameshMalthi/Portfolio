@@ -24,6 +24,116 @@
     // DOM Elements Cache
     const DOM = {};
 
+    
+    // ==========================================
+    // X. HERO TERMINAL ANIMATION
+    // ==========================================
+    function initHeroTerminal() {
+        const terminal = document.getElementById('hero-terminal');
+        if (!terminal) return;
+
+        const terminalContent = [
+            { text: '$ python portfolio.py --subject="visitor"', type: 'command', delay: 800 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: '[INIT] Portfolio session started', type: 'info', delay: 600 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: '[DATA] Loading dataset: pavan_ramesh_malthi.json', type: 'info', delay: 800 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 1/6 - About <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span> <span class="text-[#ffbd2e]">Passionate Full Stack Developer building responsive and modern web applications.</span>', type: 'data', delay: 400 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 2/6 - Projects <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span> <span class="text-[#ffbd2e]">AI-Powered Mock Interview, Resume Builder, Weather Tracker & CGPA Calculator.</span>', type: 'data', delay: 400 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 3/6 - Skills <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span>', type: 'data', delay: 300 },
+            { text: '    <span class="text-[#ffbd2e]">C, Python, Java, JavaScript,</span>', type: 'data', delay: 200 },
+            { text: '    <span class="text-[#ffbd2e]">HTML5, CSS3, React.js,</span>', type: 'data', delay: 200 },
+            { text: '    <span class="text-[#ffbd2e]">Node.js, Express.js,</span>', type: 'data', delay: 200 },
+            { text: '    <span class="text-[#ffbd2e]">MongoDB, PostgreSQL,</span>', type: 'data', delay: 200 },
+            { text: '    <span class="text-[#ffbd2e]">SQL, Git, GitHub.</span>', type: 'data', delay: 200 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 4/6 - Experience <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span> <span class="text-[#ffbd2e]">Successfully completed a 45-Day MERN Stack Development Internship at Adhoc Network Tech.</span>', type: 'data', delay: 400 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 5/6 - Learning <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span> <span class="text-[#ffbd2e]">AI Integration, Prompt Engineering, REST APIs and Modern Web Development.</span>', type: 'data', delay: 400 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: 'Epoch 6/6 - Contact <span class="text-[#27c93f]">✔</span>', type: 'epoch', delay: 600 },
+            { text: ' └─ <span class="text-gray-500">Loaded:</span> <span class="text-[#ffbd2e]">GitHub, LinkedIn and Email are ready for connection.</span>', type: 'data', delay: 400 },
+            { text: '', type: 'empty', delay: 200 },
+            { text: '[RESULT] Portfolio successfully loaded for Pavan Ramesh Malthi <span class="text-[#27c93f]">✔</span>', type: 'success', delay: 1000 }
+        ];
+
+        let i = 0;
+        let htmlContent = '';
+        terminal.innerHTML = '<span class="animate-pulse text-[#00e5ff]">█</span>';
+
+        function typeCommand(text, index, callback) {
+            if (index < text.length) {
+                const currentText = text.substring(0, index + 1);
+                terminal.innerHTML = '<div class="text-[#27c93f] whitespace-nowrap overflow-hidden">' + currentText + '<span class="animate-pulse text-[#00e5ff]">█</span></div>';
+                setTimeout(() => typeCommand(text, index + 1, callback), 50);
+            } else {
+                htmlContent += '<div class="text-[#27c93f]">' + text + '</div>';
+                terminal.innerHTML = htmlContent + '<div class="mt-1"><span class="animate-pulse text-[#00e5ff]">█</span></div>';
+                setTimeout(callback, 200);
+            }
+        }
+
+        function renderNextLine() {
+            if (i >= terminalContent.length) {
+                terminal.innerHTML = htmlContent + '<div class="mt-1 text-[#00e5ff] animate-pulse">█</div>';
+                return;
+            }
+
+            const line = terminalContent[i];
+            i++;
+
+            if (line.type === 'command') {
+                typeCommand(line.text, 0, renderNextLine);
+                return;
+            }
+
+            let lineHtml = '';
+            switch (line.type) {
+                case 'info':
+                    lineHtml = '<div class="text-[#00e5ff] opacity-0 animate-[fadeIn_0.3s_ease_forwards]">' + line.text + '</div>';
+                    break;
+                case 'epoch':
+                    lineHtml = '<div class="text-white opacity-0 animate-[fadeIn_0.3s_ease_forwards]">' + line.text + '</div>';
+                    break;
+                case 'data':
+                    lineHtml = '<div class="opacity-0 animate-[fadeIn_0.3s_ease_forwards] whitespace-pre-wrap pl-1">' + line.text + '</div>';
+                    break;
+                case 'success':
+                    lineHtml = '<div class="text-[#27c93f] font-bold opacity-0 animate-[fadeIn_0.3s_ease_forwards] mt-2">' + line.text + '</div>';
+                    break;
+                case 'empty':
+                    lineHtml = '<div class="h-4"></div>';
+                    break;
+            }
+
+            htmlContent += lineHtml;
+            terminal.innerHTML = htmlContent + '<div class="mt-1"><span class="animate-pulse text-[#00e5ff]">█</span></div>';
+            
+            terminal.scrollTop = terminal.scrollHeight;
+
+            setTimeout(renderNextLine, line.delay);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(renderNextLine, 500);
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(terminal);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize DOM Elements
         DOM.loader = document.getElementById('loader');
@@ -34,7 +144,6 @@
         DOM.menuBtn = document.getElementById('menu-btn');
         DOM.mobileMenu = document.getElementById('mobile-menu');
         DOM.typedText = document.getElementById('typed-text');
-        DOM.backToTop = document.getElementById('back-to-top');
         DOM.currentYear = document.getElementById('current-year');
         DOM.footerYear = document.getElementById('footer-year');
         DOM.mouseGlow = document.querySelector('.mouse-glow') || createMouseGlow();
@@ -55,9 +164,8 @@
         initMobileMenu();
         initTypingEffect();
         initScrollAnimations();
+        initHeroTerminal();
         initCounters();
-        // initSkillFiltering() removed
-        initBackToTop();
         initSmoothScroll();
         initRippleEffect();
         initKeyboardNavigation();
@@ -188,13 +296,6 @@
                         DOM.navbar.classList.add('scrolled');
                     } else {
                         DOM.navbar.classList.remove('scrolled');
-                    }
-                    
-                    // Hide on scroll down, show on scroll up
-                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                        DOM.navbar.classList.add('navbar-hidden');
-                    } else {
-                        DOM.navbar.classList.remove('navbar-hidden');
                     }
                     
                     lastScrollY = currentScrollY;
@@ -380,10 +481,6 @@
     }
 
     // ==========================================
-    // 9. SKILL FILTERING (Removed)
-    // ==========================================
-
-    // ==========================================
     // 10. PROJECT CARD TILT EFFECT
     // ==========================================
     function initProjectTilt() {
@@ -424,37 +521,6 @@
     }
 
     // ==========================================
-    // 11. BACK TO TOP BUTTON
-    // ==========================================
-    function initBackToTop() {
-        if (!DOM.backToTop) return;
-
-        let ticking = false;
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    if (window.scrollY > 500) {
-                        DOM.backToTop.classList.add('visible');
-                    } else {
-                        DOM.backToTop.classList.remove('visible');
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
-
-        DOM.backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    // ==========================================
     // 12. MOUSE GLOW EFFECT
     // ==========================================
     function createMouseGlow() {
@@ -487,8 +553,6 @@
         
         requestAnimationFrame(animateGlow);
     }
-
-    // (Removed initContactForm)
 
     // ==========================================
     // 14. SMOOTH SCROLL FOR ALL ANCHORS

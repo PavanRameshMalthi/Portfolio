@@ -170,11 +170,6 @@ textarea:focus-visible {
   border-color: rgba(255,255,255,0.1);
 }
 
-.navbar-hidden {
-  transform: translate(-50%, -150%) !important;
-  opacity: 0;
-  pointer-events: none;
-}
 
 .nav-link {
   position: relative;
@@ -560,8 +555,6 @@ textarea:focus-visible {
   filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
 }
 
-/* (Removed unused skill tabs, levels, and timeline CSS) */
-
 /* =========================================
    17. PROJECT CARDS
    ========================================= */
@@ -575,8 +568,6 @@ textarea:focus-visible {
 .project-card:hover {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
-
-/* (Removed unused project-image, project-tag, and featured-badge CSS) */
 
 /* =========================================
    18. CONTACT SECTION
@@ -654,43 +645,6 @@ textarea:focus-visible {
   animation: pulse 1.5s infinite;
 }
 
-/* =========================================
-   21. BACK TO TOP
-   ========================================= */
-#back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-main);
-  cursor: pointer;
-  z-index: 50;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition-fast);
-  text-decoration: none;
-}
-
-#back-to-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-#back-to-top:hover {
-  transform: scale(1.1);
-  background: var(--primary);
-  border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
 
 /* =========================================
    22. GRADIENT TEXT
@@ -873,7 +827,7 @@ textarea:focus-visible {
     color: black;
   }
   
-  .navbar, #mobile-menu, #scroll-progress, #back-to-top, .blob, .mouse-glow, .cursor-dot, .cursor-ring {
+  .navbar, #mobile-menu, #scroll-progress, .blob, .mouse-glow, .cursor-dot, .cursor-ring {
     display: none !important;
   }
   
@@ -923,3 +877,13 @@ textarea:focus-visible {
 .toast-error {
   background: linear-gradient(135deg, #EF4444, #DC2626);
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in { animation: fadeIn 0.3s ease forwards; }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
