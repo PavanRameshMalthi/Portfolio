@@ -37,7 +37,6 @@
         DOM.backToTop = document.getElementById('back-to-top');
         DOM.currentYear = document.getElementById('current-year');
         DOM.footerYear = document.getElementById('footer-year');
-        DOM.contactForm = document.querySelector('.contact-form');
         DOM.mouseGlow = document.querySelector('.mouse-glow') || createMouseGlow();
         DOM.heroBlobs = document.querySelectorAll('.hero-blob, .blob');
 
@@ -57,9 +56,8 @@
         initTypingEffect();
         initScrollAnimations();
         initCounters();
-        initSkillFiltering();
+        // initSkillFiltering() removed
         initBackToTop();
-        initContactForm();
         initSmoothScroll();
         initRippleEffect();
         initKeyboardNavigation();
@@ -382,66 +380,8 @@
     }
 
     // ==========================================
-    // 9. SKILL TABS / FILTERING
+    // 9. SKILL FILTERING (Removed)
     // ==========================================
-    function initSkillFiltering() {
-        const filterBtns = document.querySelectorAll('.skill-tab');
-        const skillCards = document.querySelectorAll('.skill-card');
-
-        if (filterBtns.length === 0 || skillCards.length === 0) return;
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const category = btn.getAttribute('data-category');
-
-                skillCards.forEach(card => {
-                    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                    
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'flex';
-                        // Small timeout to allow display block to apply before opacity transition
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(10px)';
-                        setTimeout(() => {
-                            if (btn.classList.contains('active')) { // Check if still active
-                                card.style.display = 'none';
-                            }
-                        }, 300); // Matches transition duration
-                    }
-                });
-
-                // Reinitialize icons if needed (assuming Lucide handles dynamic inserts)
-                if (typeof lucide !== 'undefined') {
-                    setTimeout(() => lucide.createIcons(), 350);
-                }
-            });
-        });
-        
-        // Initial setup for first load
-        const activeCategory = (document.querySelector('.skill-tab.active') || filterBtns[0]).getAttribute('data-category');
-        skillCards.forEach(card => {
-            if (activeCategory === 'all' || card.getAttribute('data-category') === activeCategory) {
-                card.style.display = 'flex';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            } else {
-                card.style.display = 'none';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(10px)';
-            }
-        });
-    }
 
     // ==========================================
     // 10. PROJECT CARD TILT EFFECT
@@ -548,93 +488,7 @@
         requestAnimationFrame(animateGlow);
     }
 
-    // ==========================================
-    // 13. CONTACT FORM & TOAST NOTIFICATION
-    // ==========================================
-    function initContactForm() {
-        if (!DOM.contactForm) return;
-
-        const showToast = (message, type = 'success') => {
-            // Remove existing toasts
-            const existingToasts = document.querySelectorAll('.toast');
-            existingToasts.forEach(t => t.remove());
-
-            const toast = document.createElement('div');
-            toast.className = `toast toast-${type}`;
-            toast.textContent = message;
-            
-            // Toast basic styles (should ideally be in CSS)
-            Object.assign(toast.style, {
-                position: 'fixed',
-                bottom: '20px',
-                right: '20px',
-                padding: '12px 24px',
-                borderRadius: '8px',
-                background: type === 'success' ? '#10B981' : '#EF4444',
-                color: 'white',
-                fontWeight: '500',
-                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                opacity: '0',
-                transform: 'translateY(20px)',
-                transition: 'all 0.3s ease',
-                zIndex: '9999'
-            });
-
-            document.body.appendChild(toast);
-
-            // Trigger animation
-            requestAnimationFrame(() => {
-                toast.style.opacity = '1';
-                toast.style.transform = 'translateY(0)';
-            });
-
-            // Remove after 3s
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(20px)';
-                
-                toast.addEventListener('transitionend', () => {
-                    toast.remove();
-                });
-            }, 3000);
-        };
-
-        DOM.contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simple validation
-            const inputs = DOM.contactForm.querySelectorAll('input, textarea');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('error');
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-
-            if (isValid) {
-                // Simulate form submission
-                const submitBtn = DOM.contactForm.querySelector('button[type="submit"]');
-                const originalHTML = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<span>Sending...</span>';
-                submitBtn.disabled = true;
-
-                setTimeout(() => {
-                    showToast('Message sent successfully!');
-                    DOM.contactForm.reset();
-                    submitBtn.innerHTML = originalHTML;
-                    submitBtn.disabled = false;
-                    // Re-initialize Lucide icons for the restored button
-                    if (typeof lucide !== 'undefined') lucide.createIcons();
-                }, 1500);
-            } else {
-                showToast('Please fill in all required fields.', 'error');
-            }
-        });
-    }
+    // (Removed initContactForm)
 
     // ==========================================
     // 14. SMOOTH SCROLL FOR ALL ANCHORS

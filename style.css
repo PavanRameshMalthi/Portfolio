@@ -513,17 +513,44 @@ textarea:focus-visible {
    15. SKILL CARDS
    ========================================= */
 .skill-card {
-  padding: 1.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 1.25rem;
+  border-radius: 9999px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-fast);
+  cursor: default;
 }
 
-.skill-card:hover .skill-icon {
-  filter: drop-shadow(0 0 8px var(--primary));
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.skill-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-card svg {
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -533,97 +560,7 @@ textarea:focus-visible {
   filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
 }
 
-.skill-tab {
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.skill-tab:hover, .skill-tab.active {
-  background: var(--primary);
-  color: #FFFFFF;
-  border-color: var(--primary);
-}
-
-.skill-level-bg {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-level {
-  height: 100%;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  border-radius: 3px;
-  width: 0; /* Animated via JS on visibility */
-  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.skill-card[data-visible='false'] {
-  display: none;
-  transition: opacity 0.3s ease;
-}
-
-/* =========================================
-   16. EXPERIENCE TIMELINE
-   ========================================= */
-.timeline-container {
-  position: relative;
-}
-
-.timeline {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--primary), var(--accent));
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 2rem;
-  border-left: 4px solid var(--primary);
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
-  border-left: none;
-  border-right: 4px solid var(--accent);
-}
-
-.timeline-dot {
-  position: absolute;
-  top: 2rem;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 10px var(--primary);
-  z-index: 10;
-}
-
-.timeline-item:nth-child(odd) .timeline-dot {
-  right: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-  left: -10px;
-}
-
-@media (max-width: 768px) {
-  .timeline { left: 20px; }
-  .timeline-item { width: 100%; padding-left: 3rem; border-left: 4px solid var(--primary) !important; border-right: none !important; left: 0 !important; }
-  .timeline-dot { left: 10px !important; right: auto !important; }
-}
+/* (Removed unused skill tabs, levels, and timeline CSS) */
 
 /* =========================================
    17. PROJECT CARDS
@@ -639,46 +576,7 @@ textarea:focus-visible {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-.project-image {
-  overflow: hidden;
-  border-radius: 16px 16px 0 0;
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.6s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
-
-.project-tag {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(59, 130, 246, 0.15);
-  color: var(--primary);
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.featured-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #FFFFFF;
-  padding: 0.25rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+/* (Removed unused project-image, project-tag, and featured-badge CSS) */
 
 /* =========================================
    18. CONTACT SECTION
@@ -890,10 +788,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .btn-primary, .btn-outline {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
+  
   .stat-card {
     padding: 1.5rem;
   }
