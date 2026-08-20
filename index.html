@@ -1,688 +1,668 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Malthi Pavan Ramesh – Full Stack Developer specializing in React.js, Node.js, PostgreSQL, MongoDB, and AI-powered web applications.">
-    <meta property="og:title" content="Pavan Ramesh Malthi - Portfolio">
-    <meta property="og:description" content="Portfolio of Malthi Pavan Ramesh – Full Stack Developer specializing in React.js, Node.js, PostgreSQL, MongoDB, and AI-powered web applications.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://malthipavanramesh.dev/">
-    <meta name="twitter:title" content="Pavan Ramesh Malthi - Portfolio">
-    <title>Pavan Ramesh Malthi - Portfolio</title>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS v4 -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-    <!-- Tailwind Custom Theme -->
-    <style type="text/tailwindcss">
-    @theme {
-      --color-bg-primary: #0B1120;
-      --color-bg-card: rgba(255,255,255,0.06);
-      --color-primary: #3B82F6;
-      --color-secondary: #06B6D4;
-      --color-accent: #8B5CF6;
-      --color-text: #F8FAFC;
-      --color-text-muted: #94A3B8;
-      --color-border: rgba(255,255,255,0.08);
-      --font-sans: 'Inter', sans-serif;
-    }
-    </style>
-
-    <!-- Local Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO & Metadata -->
+  <title>Pavan Ramesh Malthi - Portfolio</title>
+  <meta name="description" content="Portfolio of Pavan Ramesh Malthi, a Full Stack Developer specializing in React.js, Node.js, Express.js, MongoDB, PostgreSQL, and AI technologies.">
+  <meta name="keywords" content="Pavan Ramesh Malthi, Full Stack Developer, Software Engineer, Portfolio, React, Node.js, AI Developer">
+  <meta name="author" content="Pavan Ramesh Malthi">
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pavan Ramesh Malthi - Portfolio">
+  <meta property="og:description" content="Building modern, scalable, and responsive web applications with React, Node.js, Express, MongoDB, and AI technologies.">
+  <meta property="og:url" content="https://pavanrameshmalthi.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pavan Ramesh Malthi - Portfolio">
+  <meta name="twitter:description" content="Portfolio of Pavan Ramesh Malthi. Full Stack Developer & AI Enthusiast.">
+  
+  <!-- Favicon / Theme -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <meta name="theme-color" content="#08090B">
+  
+  <!-- Google Fonts: Inter & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Structured JSON-LD Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pavan Ramesh Malthi",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://pavanrameshmalthi.github.io/",
+    "sameAs": [
+      "https://github.com/PavanRameshMalthi",
+      "https://www.linkedin.com/in/pavan-ramesh-malthi"
+    ],
+    "knowsAbout": ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "JavaScript", "AI Integration"]
+  }
+  </script>
 </head>
-<body class="bg-bg-primary text-text font-sans overflow-x-hidden antialiased" style="font-family: 'Inter', sans-serif;">
+<body>
 
-    <!-- 3. PAGE LOADER -->
-    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bg-primary transition-opacity duration-500">
-        <div class="w-16 h-16 border-4 border-border border-t-primary rounded-full animate-spin mb-4"></div>
-        <p class="text-text-muted font-medium tracking-widest uppercase text-sm">Loading...</p>
-    </div>
+  <!-- Ambient Light Mesh Background -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
 
-    <!-- 2. CURSOR FOLLOWER -->
-    <div class="cursor-dot hidden md:block fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[100] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
-    <div class="cursor-ring hidden md:block fixed w-8 h-8 border border-primary/50 rounded-full pointer-events-none z-[100] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out"></div>
+  <div class="site-wrapper">
 
-    <!-- MOUSE GLOW -->
-    <div class="mouse-glow hidden md:block"></div>
+    <!-- 1. NAVIGATION -->
+    <header class="navbar-wrapper">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Brand / Identity -->
+        <a href="#hero" class="nav-brand" aria-label="Pavan Ramesh Malthi Home">
+          <span class="status-dot-container" title="Available for opportunities">
+            <span class="status-dot-ping"></span>
+            <span class="status-dot"></span>
+          </span>
+          <span>Pavan Ramesh Malthi</span>
+        </a>
 
-    <!-- 1. SCROLL PROGRESS BAR -->
-    <div class="fixed top-0 left-0 w-full h-1 z-[90] bg-transparent">
-        <div id="scroll-progress" class="h-full w-0 bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-150 ease-out"></div>
-    </div>
-
-    <!-- 5. NAVBAR -->
-    <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-bg-primary/80 backdrop-blur-md border-b border-border shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-center h-16 relative">
-                
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex flex-1 justify-center">
-                    <div class="flex items-center space-x-6">
-                        <a href="#hero" class="nav-link text-text hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="hero">Home</a>
-                        <a href="#about" class="nav-link text-text-muted hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="about">About</a>
-                        <a href="#skills" class="nav-link text-text-muted hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="skills">Skills</a>
-                        <a href="#experience" class="nav-link text-text-muted hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="experience">Experience</a>
-                        <a href="#projects" class="nav-link text-text-muted hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="projects">Projects</a>
-                        <a href="#contact" class="nav-link text-text-muted hover:text-primary transition-colors py-2 text-sm font-medium relative group" data-section="contact">Contact</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden absolute right-0 flex items-center">
-                    <button id="menu-btn" class="text-text-muted hover:text-text focus:outline-none p-2 rounded-md focus:ring-2 focus:ring-primary" aria-expanded="false" aria-label="Toggle navigation menu">
-                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6 menu-icon"></i>
-                        <i data-lucide="x" id="close-icon" class="w-6 h-6 x-icon hidden"></i>
-                    </button>
-                </div>
-            </div>
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links">
+          <a href="#about" class="nav-item">About</a>
+          <a href="#projects" class="nav-item">Projects</a>
+          <a href="#skills" class="nav-item">Skills</a>
+          <a href="#contact" class="nav-item">Contact</a>
         </div>
-    </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-bg-primary/95 backdrop-blur-xl flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
-        <div class="flex flex-col items-center space-y-6 text-xl">
-            <a href="#hero" class="nav-link text-text font-medium hover:text-primary transition-colors" data-section="hero">Home</a>
-            <a href="#about" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="about">About</a>
-            <a href="#skills" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="skills">Skills</a>
-            <a href="#experience" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="experience">Experience</a>
-            <a href="#projects" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="projects">Projects</a>
-            <a href="#contact" class="nav-link text-text-muted font-medium hover:text-primary transition-colors" data-section="contact">Contact</a>
-        </div>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-menu-overlay" aria-hidden="true">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
     </div>
 
-    <main>
-                <!-- 6. HERO SECTION -->
-        <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            <!-- Background Elements -->
-            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div class="grid-bg absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                <div class="blob blob-1 absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-pulse"></div>
-                <div class="blob blob-2 absolute top-1/3 right-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70" style="animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 1s;"></div>
-                <div class="blob blob-3 absolute bottom-1/4 left-1/2 w-80 h-80 bg-secondary/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50" style="animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite 2s;"></div>
+    <!-- MAIN CONTAINER (1200px max-width) -->
+    <main class="main-container">
+
+      <!-- 2. HERO SECTION -->
+      <section id="hero" class="hero-section">
+        <div class="hero-content fade-up">
+          <div class="hero-badge">
+            <span class="sparkle">✦</span>
+            <span>Available for Full-time Roles &amp; Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hello,<br>
+            <span class="name-highlight">I'm Pavan Ramesh Malthi</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <span>Full Stack Developer</span>
+            <span class="divider"></span>
+            <span>AI Enthusiast</span>
+          </div>
+
+          <p class="hero-description">
+            I build modern, scalable, and high-performance web applications using HTML, CSS, JavaScript, React, Node.js, MongoDB, and AI technologies. Focused on clean architecture and frictionless user experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary" aria-label="Contact Pavan Ramesh Malthi">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Contact Me</span>
+            </a>
+
+            <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero VS Code PowerShell Terminal Visual -->
+        <div class="hero-visual fade-up delay-2">
+          <div class="terminal-window">
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="ctrl-dot dot-red" aria-hidden="true"></span>
+                <span class="ctrl-dot dot-yellow" aria-hidden="true"></span>
+                <span class="ctrl-dot dot-green" aria-hidden="true"></span>
+              </div>
+              <div class="terminal-tab">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <span>pwsh · Portfolio</span>
+              </div>
+              <div class="terminal-badge">node v20.x</div>
             </div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-                    
-                    <!-- Left Column -->
-                    <div class="flex flex-col items-center lg:items-start text-center lg:text-left mt-10 lg:mt-0">
-                        <h1 class="animate-on-scroll text-5xl md:text-7xl font-black mb-4 tracking-tight leading-tight" data-animation="fade-up">
-                            Pavan Ramesh<br/>
-                            <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Malthi</span>
-                        </h1>
-                        
-                        <h2 class="animate-on-scroll text-xl md:text-2xl font-bold text-text mb-6" data-animation="fade-up" style="animation-delay: 100ms;">
-                            Full Stack Developer building modern web applications.
-                        </h2>
-                        
-                        <p class="animate-on-scroll text-text-muted text-base md:text-lg max-w-lg mb-8 leading-relaxed" data-animation="fade-up" style="animation-delay: 200ms;">
-                            I build responsive, scalable, and AI-powered web applications using modern technologies including React, Node.js, Express.js, MongoDB, PostgreSQL, and JavaScript.
-                        </p>
-                        
-                        <!-- Social Icons -->
-                        <div class="animate-on-scroll flex items-center gap-4 mb-8" data-animation="fade-up" style="animation-delay: 300ms;">
-                            <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="GitHub Profile">
-                                <svg viewBox="0 0 32 32" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="LinkedIn Profile">
-                                <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            </a>
-                            <a href="mailto:pavanrameshmalthi886@gmail.com" class="text-text-muted hover:text-primary p-3 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="Send an Email">
-                                <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            </a>
-                        </div>
-                        
-                        <!-- Button -->
-                        <div class="animate-on-scroll" data-animation="fade-up" style="animation-delay: 400ms;">
-                            <a href="#projects" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] focus:ring-2 focus:ring-offset-2 focus:ring-offset-bg-primary focus:ring-primary w-full sm:w-auto">
-                                View My Projects
-                            </a>
-                        </div>
-                    </div>
+            <!-- Terminal Body -->
+            <div class="terminal-body" id="terminal-body">
+              <!-- Command Line -->
+              <div class="terminal-line prompt-line">
+                <span class="terminal-prompt">PS C:\Portfolio&gt;</span>
+                <span class="terminal-command" id="term-command"></span>
+                <span class="terminal-cursor" id="term-cursor-cmd"></span>
+              </div>
 
-                    <!-- Right Column: Code Window -->
-                    <div class="animate-on-scroll hidden lg:block perspective-1000" data-animation="fade-up" style="animation-delay: 500ms;">
-                        <div class="bg-[#111111] border border-border/50 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl transform rotate-y-[-5deg] rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 h-[480px] flex flex-col relative w-full max-w-xl mx-auto">
-                            <!-- macOS Window Header -->
-                            <div class="bg-[#1a1a1a] px-4 py-3 flex items-center justify-between border-b border-white/5 relative">
-                                <div class="flex items-center gap-2 absolute left-4">
-                                    <div class="w-3.5 h-3.5 rounded-full bg-[#ff5f56] shadow-[0_0_5px_rgba(255,95,86,0.5)]"></div>
-                                    <div class="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-[0_0_5px_rgba(255,189,46,0.5)]"></div>
-                                    <div class="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-[0_0_5px_rgba(39,201,63,0.5)]"></div>
-                                </div>
-                                <div class="flex-1 text-center text-[#888888] text-xs font-mono font-medium tracking-wider">portfolio.py</div>
-                            </div>
-                            
-                            <!-- Terminal Content -->
-                            <div id="hero-terminal" class="p-4 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-y-auto overflow-x-hidden flex-1 relative text-left scrollbar-hide">
-                                <!-- Lines will be injected by JS -->
-                            </div>
-                        </div>
-                    </div>
+              <!-- Step 1: Starting -->
+              <div class="terminal-line term-step hidden" id="term-step-starting">
+                <span class="term-success-icon">✔</span>
+                <span class="term-dim-text">Starting...</span>
+              </div>
+
+              <!-- Step 2: Loaded -->
+              <div class="terminal-line term-step hidden" id="term-step-loaded">
+                <span class="term-highlight-text">Portfolio Loaded</span>
+              </div>
+
+              <!-- Step 3: Developer Info -->
+              <div class="terminal-block term-step hidden" id="term-step-developer">
+                <div class="term-label">Developer:</div>
+                <div class="term-value">Pavan Ramesh Malthi</div>
+              </div>
+
+              <!-- Step 4: Status -->
+              <div class="terminal-block term-step hidden" id="term-step-status">
+                <div class="term-label">Status:</div>
+                <div class="term-value term-status-value">
+                  <span class="term-status-dot"></span>
+                  <span>Available</span>
                 </div>
-            </div>
-        </section>
+              </div>
 
-                <!-- 7. ABOUT SECTION -->
-        <section id="about" class="py-24 relative z-10">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-start">
-                    
-                    <!-- Left Side -->
-                    <div class="animate-on-scroll flex flex-col items-center lg:items-start text-center lg:text-left" data-animation="fade-up">
-                        <h2 class="text-4xl md:text-5xl font-bold text-text mb-8 relative inline-block">
-                            About Me
-                            <div class="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-1/2 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                        </h2>
-                        
-                        <div class="text-text-muted text-lg leading-relaxed space-y-6 max-w-lg">
-                            <p>
-                                Hi! I'm Pavan Ramesh Malthi, a Bachelor of Computer Applications (BCA) student passionate about building modern, responsive, and scalable web applications. I enjoy creating user-friendly solutions using React.js, Node.js, Express.js, MongoDB, PostgreSQL, and JavaScript while continuously exploring AI integration and modern web technologies. I am always eager to learn new technologies, solve real-world problems, and contribute to impactful software projects.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Side: Info Cards -->
-                    <div class="animate-on-scroll flex flex-col space-y-6 w-full max-w-md mx-auto lg:mx-0" data-animation="fade-up" style="animation-delay: 200ms;">
-                        <!-- Status Card -->
-                        <div class="bg-bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-colors shadow-lg w-full">
-                            <div class="flex items-center justify-center lg:justify-start gap-3 mb-4">
-                                <div class="relative flex h-3 w-3">
-                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                                </div>
-                                <h3 class="text-xl font-bold text-text">Status</h3>
-                            </div>
-                            <p class="text-text-muted text-center lg:text-left">
-                                Open to internships, freelance opportunities, collaborations, and exciting software development projects.
-                            </p>
-                        </div>
-                        
-                        <!-- Education Card -->
-                        <div class="bg-bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-accent/50 transition-colors shadow-lg w-full">
-                            <div class="flex items-center justify-center lg:justify-start gap-3 mb-4">
-                                <i data-lucide="graduation-cap" class="w-6 h-6 text-accent"></i>
-                                <h3 class="text-xl font-bold text-text">Education</h3>
-                            </div>
-                            <div class="space-y-1 text-center lg:text-left">
-                                <p class="font-semibold text-text text-lg">Bachelor of Computer Applications (BCA)</p>
-                                <p class="text-primary">Aditya Degree College, Kakinada</p>
-                                <p class="text-text-muted text-sm">2024 &ndash; 2027</p>
-                                <p class="text-text-muted text-sm font-medium mt-3 pt-3 border-t border-border/50 inline-block w-full">Expected Graduation: Apr 2027</p>
-                            </div>
-                        </div>
-                        
-                        <div class="pt-4 text-center lg:text-left">
-                            <a href="#contact" class="inline-flex items-center gap-2 text-text-muted hover:text-primary transition-colors font-medium group text-sm md:text-base">
-                                Let's Connect 
-                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                </div>
+              <!-- End Prompt with blinking cursor -->
+              <div class="terminal-line prompt-line term-step hidden" id="term-step-end">
+                <span class="terminal-prompt">PS C:\Portfolio&gt;</span>
+                <span class="terminal-cursor blink"></span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- 8. SKILLS SECTION -->
-                                <section id="skills" class="py-24 relative z-10 bg-bg-primary/50">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
-                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
-                        Skills
-                    </h2>
-                </div>
-                <!-- Skill Cards Grid -->
-                <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img"><circle cx="16" cy="16" r="14" fill="#A8B9CC"/><text x="16" y="21" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF" font-family="Arial">C</text></svg></div>
-                        <h3>C</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 50ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img"><path d="M15.9 2c-1.5 0-2.8.3-3.9.8C9.5 4 9.2 6.2 9.2 7.5v2.8h6.8v.9H7.1c-2 0-3.7 1.1-4.3 3.3-.6 2.5-.7 4.1 0 6.7.5 1.9 1.7 3.3 3.7 3.3h2.4v-3c0-2.3 2-4.3 4.3-4.3h6.8c1.9 0 3.4-1.6 3.4-3.4V7.5c0-1.8-1.5-3.2-3.4-3.7C18.7 2.3 17.3 2 15.9 2zm-3.7 3.2c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3-1.3-.6-1.3-1.3.6-1.3 1.3-1.3z" fill="#3776AB"/><path d="M24.9 11.2v2.9c0 2.4-2 4.4-4.3 4.4h-6.8c-1.9 0-3.4 1.6-3.4 3.4v6.3c0 1.8 1.6 2.9 3.4 3.4 2.2.6 4.3.7 6.8 0 1.7-.5 3.4-1.4 3.4-3.4v-2.5h-6.8v-.9h10.2c2 0 2.7-1.4 3.4-3.3.7-2 .7-3.8 0-6.7-.5-2-1.4-3.3-3.4-3.3h-2.5zm-3.8 13.3c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3-1.3-.6-1.3-1.3.6-1.3 1.3-1.3z" fill="#FFD43B"/></svg></div>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 100ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img"><path d="M12.3 24.2s-1.3.8.9 1c2.7.3 4-.3 6.9-1a11 11 0 0 0 2 1c-7 3-15.9-.2-9.8-1zm-.8-3.7s-1.5 1.1.7 1.3c2.9.3 5.1.3 9-1.1a5 5 0 0 0 1.7 1c-8.5 2.5-18-.2-11.4-.2z" fill="#ED8B00"/><path d="M18 16.5c2-2.3-.5-4.3-.5-4.3s4.7 2.4 2.5 5.5c-2 2.9-3.6 4.3 4.8 9.3 0 0-13.2 3.3-6.8-10.5z" fill="#ED8B00"/><path d="M25.4 26.5s1 .8-1.1 1.4c-3.8 1.1-15.8 1.5-19.2 0-1.2-.5 1.1-1.2 1.8-1.4.8-.2 1.2-.1 1.2-.1-1.4-1-9 2-3.9 2.8 14 2.4 25.5-1 21.2-2.7zm-13-9.5s-6.4 1.5-2.3 2.1c1.8.2 5.3.2 8.6-.1 2.7-.3 5.4-.9 5.4-.9s-1 .4-1.6.8c-6.6 1.7-19.3.9-15.6-.8 3.1-1.5 5.5-1.1 5.5-1.1zm11.7 6.5c6.7-3.5 3.6-6.8 1.4-6.4-.5.1-.8.2-.8.2s.2-.3.6-.5c4.4-1.6 7.8 4.5-1.4 6.9 0 0 .1-.1.2-.2z" fill="#5382A1"/></svg></div>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 150ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#F7DF1E"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M2 2v20h20V2H2zm16.52 15.65c-.88 1.35-2.22 2.08-4.04 2.08-2.6 0-4.3-1.45-4.3-3.83h2.38c0 1.23.67 1.87 1.95 1.87 1.05 0 1.7-.58 1.7-1.4 0-.82-.6-1.23-2.14-1.8l-.8-.32c-2.3-.9-3.52-2.25-3.52-4.22 0-2.3 1.83-3.85 4.3-3.85 2.1 0 3.7.97 4.47 2.65l-2.07 1.25c-.48-.9-.98-1.32-1.93-1.32-.97 0-1.48.55-1.48 1.25 0 .8.53 1.15 1.87 1.63l.85.3c2.72 1.05 4.02 2.37 4.02 4.4 0 1-.27 1.83-.82 2.5zm-8.32.22H7.9V9.3h2.32v10.57z"/></svg></div>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 200ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" fill="#E34F26"/></svg></div>
-                        <h3>HTML5</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 250ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.41H5.41l.23 2.622h10.059l-.232 2.718H6.34l.23 2.622h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157z" fill="#1572B6"/></svg></div>
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 300ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#61DAFB"><path d="M11.955 18.232c-3.13 0-5.89-.99-7.98-2.61-2.11-1.63-3.23-3.7-3.23-5.6 0-1.9.13-3.05 1.54-4.5 1.4-1.43 3.65-2.6 6.13-3.46 2.4-.84 5.3-1.3 8.35-1.3 3.03 0 5.92.46 8.31 1.3 2.47.85 4.7 2 6.1 3.44 1.4 1.44 1.52 2.6 1.52 4.5 0 1.9-1.12 3.97-3.23 5.6-2.09 1.62-4.85 2.61-7.98 2.61zm0-15.54c-5.78 0-10.4 2.87-10.4 6.4 0 3.54 4.63 6.4 10.4 6.4 5.76 0 10.38-2.86 10.38-6.4 0-3.53-4.62-6.4-10.38-6.4z"/><circle cx="11.955" cy="9.132" r="2.11"/></svg></div>
-                        <h3>React.js</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 350ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img"><circle cx="16" cy="16" r="14" fill="#000" stroke="#fff"/><path d="M12.5 10.5v11l8.5-11" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="21.5" y1="10.5" x2="21.5" y2="17" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-                        <h3>Next.js</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 400ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#06B6D4"><path d="M12 4.25c-3.25 0-5.5 2-6.5 6 1.5-2 3-2.5 4.5-2 1.2.4 2.1 1.3 2.9 2.2 1.2 1.3 2.5 2.8 5.1 2.8 3.25 0 5.5-2 6.5-6-1.5 2-3 2.5-4.5 2-1.2-.4-2.1-1.3-2.9-2.2-1.2-1.3-2.5-2.8-5.1-2.8zM5.5 10.25c-3.25 0-5.5 2-6.5 6 1.5-2 3-2.5 4.5-2 1.2.4 2.1 1.3 2.9 2.2 1.2 1.3 2.5 2.8 5.1 2.8 3.25 0 5.5-2 6.5-6-1.5 2-3 2.5-4.5 2-1.2-.4-2.1-1.3-2.9-2.2-1.2-1.3-2.5-2.8-5.1-2.8z"/></svg></div>
-                        <h3>Tailwind CSS</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 450ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#339933"><path d="M11.83 0C11.39 0 10.96.15 10.58.42L2 5.37C1.22 5.8 1 6.5 1 7.42V16.6C1 17.5 1.22 18.2 2 18.63L10.58 23.58C10.95 23.85 11.39 24 11.83 24 12.27 24 12.7 23.85 13.08 23.58L21.66 18.63C22.44 18.2 22.66 17.5 22.66 16.6V7.42C22.66 6.5 22.44 5.8 21.66 5.37L13.08.42C12.7.15 12.27 0 11.83 0ZM11.83 1.83L20 6.57V16.03L11.83 20.76L3.66 16.03V6.57L11.83 1.83Z"/></svg></div>
-                        <h3>Node.js</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 500ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM11 17H9V12H7V10H9V7H11V10H13V12H11V17ZM17 17H15V7H17V17Z"/></svg></div>
-                        <h3>Express.js</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-                        <h3>REST APIs</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 50ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" fill="none" stroke="#EAB308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-                        <h3>SQL</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 100ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#4169E1"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM17.34 16.59C16.14 17.79 14.59 18.42 13 18.42C11.41 18.42 9.86 17.79 8.66 16.59C7.46 15.39 6.83 13.84 6.83 12.25C6.83 10.66 7.46 9.11 8.66 7.91L9.61 8.86C8.71 9.76 8.16 11 8.16 12.25C8.16 13.5 8.71 14.74 9.61 15.64C10.51 16.54 11.75 17.09 13 17.09C14.25 17.09 15.49 16.54 16.39 15.64L17.34 16.59ZM14 9V11H12V9H14Z"/></svg></div>
-                        <h3>PostgreSQL</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 150ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#47A248"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12S7.58 4 12 4 20 7.58 20 12 16.42 20 12 20ZM12 6C9.24 6 7 8.24 7 11V15C7 16.66 8.34 18 10 18H14C15.66 18 17 16.66 17 15V11C17 8.24 14.76 6 12 6ZM15 15C15 15.55 14.55 16 14 16H10C9.45 16 9 15.55 9 15V11C9 9.34 10.34 8 12 8C13.66 8 15 9.34 15 11V15Z"/></svg></div>
-                        <h3>MongoDB</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 200ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 0-9 9c0 3.31 1.79 6.2 4.5 7.82v1.68a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5v-1.68C19.21 17.2 21 14.31 21 11a9 9 0 0 0-9-9ZM9 22h6"/></svg></div>
-                        <h3>Prompt Engineering</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 250ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M16 2l2.4 8.4L26 13l-7.6 2.6L16 24l-2.4-8.4L6 13l7.6-2.6z" fill="#4285F4"/><path d="M24 6l1.2 4.2L29 11.5l-3.8 1.3L24 17l-1.2-4.2L19 11.5l3.8-1.3z" fill="#34A853" opacity="0.7"/><path d="M8 22l1 3.5 3.5 1.2-3.5 1.2L8 31.5l-1-3.5L3.5 26.8l3.5-1.2z" fill="#FBBC04" opacity="0.7"/></svg></div>
-                        <h3>Gemini AI Integration</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 300ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" class="w-full h-full"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M10 7v3m0 0v3m0-3h3m-3 0H7" stroke-width="1.5" opacity="0.5"/></svg></div>
-                        <h3>AI-assisted Research & Data Analysis</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 350ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#F05032"><path d="M23.546 10.93L13.067.452a1.442 1.442 0 0 0-2.038 0L8.562 2.92 11.84 6.2a1.996 1.996 0 0 1 1.636 1.272l3.414 3.414A1.992 1.992 0 0 1 19 13a2 2 0 1 1-3.15-1.636l-3.23-3.23v4.618a2.001 2.001 0 1 1-1.24 0V7.272a1.996 1.996 0 0 1-1.636-1.272L6.51 2.766 1.452 7.825a1.442 1.442 0 0 0 0 2.038l10.48 10.48c.56.56 1.474.56 2.035 0l9.579-9.58c.563-.56.563-1.472 0-2.033z"/></svg></div>
-                        <h3>Git</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 400ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#fff"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
-                        <h3>GitHub</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 450ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 24 24" class="w-full h-full" role="img" fill="#007ACC"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg></div>
-                        <h3>VS Code</h3>
-                    </div>
-                    <div class="skill-card animate-on-scroll" data-animation="scale-in" style="animation-delay: 500ms;">
-                        <div class="skill-icon"><svg viewBox="0 0 32 32" class="w-full h-full" role="img" fill="#D83B01"><path d="M16 2.2L2 5.5v21l14 3.3L30 26.5V5.5L16 2.2zM27 24L16 26.6 5 24V8l11-2.6L27 8v16z"/></svg></div>
-                        <h3>MS Office</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- 3. PROJECTS SECTION -->
+      <section id="projects" class="projects-section">
+        <div class="section-header fade-up">
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
 
-        <!-- 9. EXPERIENCE SECTION -->
-        <section id="experience" class="py-24 relative z-10">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
-                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
-                        Experience
-                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
-                    </h2>
-                </div>
+        <div class="projects-grid">
 
-                                <!-- Single Experience Entry -->
-                <div class="animate-on-scroll max-w-7xl mx-auto w-full py-6" data-animation="fade-up">
-                    <div class="project-card group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full border border-primary/20 flex items-center gap-1">
-                                    💼 Experience
-                                </span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">MERN Stack Development Intern</h3>
-                            <p class="text-text-muted font-medium mb-1 text-lg">Adhoc Network Tech</p>
-                            <p class="text-text-muted text-sm mb-6">45 Days Internship • 2026</p>
-                            
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                Successfully completed a 45-day intensive internship focused on MERN Stack Development. Built responsive full-stack web applications using React, Node.js, Express.js, and MongoDB while gaining practical experience with REST APIs, authentication, database integration, Git/GitHub, debugging, and modern software development workflows. The internship strengthened my ability to develop real-world web applications and collaborate using industry-standard tools.
-                            </p>
-                            
-                            <div class="flex items-center gap-4 mt-auto">
-                                <span class="flex items-center gap-2 text-text-muted font-medium text-sm bg-white/5 px-4 py-2 rounded-lg border border-transparent opacity-75 cursor-default">
-                                    ✔ Internship Completed
-                                </span>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="React.js">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><circle cx="16" cy="16" r="2.8" fill="#61DAFB"/><g stroke="#61DAFB" stroke- fill="none"><ellipse cx="16" cy="16" rx="11" ry="4.2"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(120 16 16)"/></g></svg>
+          <!-- Project 1: AI Mock Interview -->
+          <article class="project-card fade-up">
+            <div class="project-image-container">
+              <img src="images/ai-interview-mockup.svg" alt="AI Mock Interview Platform Interface Preview" class="project-image" loading="lazy">
             </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Node.js">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M16 2.3L3.2 9.6v14.8L16 31.7l12.8-7.3V9.6z" fill="#339933"/><path d="M16 2.3v29.4l12.8-7.3V9.6z" fill="#2E7D32"/><path d="M16 18.5l-5.3-3v-6l5.3-3 5.3 3v6z" fill="#fff" opacity="0.15"/></svg>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">Full Stack &amp; AI</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">AI Mock Interview</h3>
+              <p class="project-desc">
+                An intelligent interview simulation platform that generates adaptive technical and behavioral questions, analyzes candidate audio responses in real time, and produces comprehensive AI feedback.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Gemini AI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PavanRameshMalthi/AI-Powered-Mock-Interview.git" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View AI Mock Interview on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
             </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Express.js">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="4" fill="#333"/><text x="16" y="20" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff" font-family="Arial">Ex</text></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="MongoDB">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M17.2 3.7s-1.6 2-1.7 2.2c-3 4.3-2.4 8.5-0.6 12.7.1.3.3.6.4.9v.1s.1 0 .1-.1c.2-.4.3-.9.4-1.3.1-.5.6-.6.9-.2.5.7.7 1.5.7 2.4 0 .4 0 .9-.1 1.3 0 .2 0 .4-.1.6v.2l.1.1c.7-1 1.2-2.2 1.5-3.4.9-3.4.4-6.6-1.3-9.6-.3-.5-.7-1-.9-1.5-.2-.3-.3-.7-.5-1-.1-.3-.2-.7-.4-1l-.3-.6-.1-.4v-.2l-.1-.2z" fill="#47A248"/><path d="M15.6 22.4c-.1-.5-.4-1-.8-1.3-1-1-2-2-2.7-3.3-1.3-2.5-1.3-5-.3-7.5.1-.2 0-.1-.1 0-2 2.8-3 5.9-2 9.3.4 1.2 1.1 2.2 2 3.1.4.4.8.7 1.1 1.2.3.6.3 1.2.3 1.9l.4 2.3c0 .1.1.1.5-1.3.8-2.5 1-3.3.2-.9-.4-1.5-1-2.5z" fill="#47A248"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="REST APIs">
-                <svg viewBox="0 0 32 32" class="w-full h-full" fill="none" stroke="#818CF8" stroke- stroke-linecap="round" role="img" aria-hidden="true"><path d="M6 16h4m12 0h4M16 6v4m0 12v4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l1.5 1.5m8 8l1.5 1.5m-11 0l1.5-1.5m8-8l1.5-1.5"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Git">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M29.5 14.7L17.3 2.5c-.8-.8-2-.8-2.8 0l-2.5 2.5 3.2 3.2a2.4 2.4 0 0 1 3 3l3 3a2.4 2.4 0 1 1-1.4 1.3l-2.8-2.8v7.5a2.4 2.4 0 1 1-2-0 2.4 2.4 0 0 1 .6-4.7V13a2.4 2.4 0 0 1-1.3-3.2L11.1 6.6l-8.6 8.6c-.8.8-.8 2 0 2.8l12.2 12.2c.8.8 2 .8 2.8 0L29.5 17.5c.8-.8.8-2 0-2.8" fill="#F05032"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="GitHub">
-                <svg viewBox="0 0 32 32" class="w-full h-full" fill="#FFFFFF" role="img" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
-            </div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </article>
 
-        <!-- 10. PROJECTS SECTION -->
-        <section id="projects" class="py-24 relative z-10 bg-bg-primary/50">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
-                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
-                        Featured Projects
-                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary rounded-full"></span>
-                    </h2>
-                </div>
+          <!-- Project 2: Resume Builder -->
+          <article class="project-card fade-up delay-1">
+            <div class="project-image-container">
+              <img src="images/resume-builder-mockup.svg" alt="Resume Builder Application Preview" class="project-image" loading="lazy">
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">Web Application</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">Resume Builder</h3>
+              <p class="project-desc">
+                An interactive ATS-optimized resume builder that allows users to customize professional formatting, preview documents dynamically, and generate instant printable exports.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">PDF Engine</span>
+              </div>
+              <div class="project-links">
+                <a href="https://pavanrameshmalthi.github.io/RESUME-BUILDER/" target="_blank" rel="noopener noreferrer" class="btn-project demo" aria-label="Live Demo for Resume Builder">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/PavanRameshMalthi/RESUME-BUILDER.git" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View Resume Builder on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
-                                                                <div class="flex flex-col gap-8">
-                    <!-- Project 1 (Featured) -->
-                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center" data-animation="fade-up">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
-                                    <i data-lucide="star" class="w-3 h-3 fill-accent"></i> Full Stack Web Application
-                                </span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">AI-Powered Mock Interview</h3>
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                An AI-powered mock interview platform that helps users prepare for technical and HR interviews. It generates interview questions, evaluates responses, and provides intelligent feedback using AI to improve interview performance.
-                            </p>
-                            <div class="flex items-center gap-4 mt-auto">
-                                <a href="https://github.com/PavanRameshMalthi/AI-Powered-Mock-Interview.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
-                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="React.js">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><circle cx="16" cy="16" r="2.8" fill="#61DAFB"/><g stroke="#61DAFB" stroke- fill="none"><ellipse cx="16" cy="16" rx="11" ry="4.2"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="11" ry="4.2" transform="rotate(120 16 16)"/></g></svg>
+          <!-- Project 3: Weather Application -->
+          <article class="project-card fade-up">
+            <div class="project-image-container">
+              <img src="images/weather-tracker-mockup.svg" alt="Weather Tracker Application Preview" class="project-image" loading="lazy">
             </div>
-            
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">API Integration</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">Weather Application</h3>
+              <p class="project-desc">
+                A sleek meteorological web application that delivers real-time weather analytics, multi-day forecasting, dynamic atmospheric gauges, and climate tracking.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Weather API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://pavanrameshmalthi.github.io/WEATHER/" target="_blank" rel="noopener noreferrer" class="btn-project demo" aria-label="Live Demo for Weather Tracker">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/PavanRameshMalthi/WEATHER.git" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View Weather Application on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Code</span>
+                </a>
+              </div>
             </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Tailwind CSS">
-                <svg viewBox="0 0 32 32" class="w-full h-full" fill="#06B6D4" role="img" aria-hidden="true"><path d="M16 6.4c-4.3 0-6.9 2.1-8 6.4 1.6-2.1 3.5-2.9 5.6-2.4 1.2.3 2.1 1.2 3 2.2 1.5 1.6 3.3 3.4 7.1 3.4 4.3 0 6.9-2.1 8-6.4-1.6 2.1-3.5 2.9-5.6 2.4-1.2-.3-2.1-1.2-3-2.2C21.6 8.2 19.8 6.4 16 6.4zm-8 9.6c-4.3 0-6.9 2.1-8 6.4 1.6-2.1 3.5-2.9 5.6-2.4 1.2.3 2.1 1.2 3 2.2 1.5 1.6 3.3 3.4 7.1 3.4 4.3 0 6.9-2.1 8-6.4-1.6 2.1-3.5 2.9-5.6 2.4-1.2-.3-2.1-1.2-3-2.2-1.5-1.6-3.3-3.4-7.1-3.4z"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Gemini AI">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M16 2l2.4 8.4L26 13l-7.6 2.6L16 24l-2.4-8.4L6 13l7.6-2.6z" fill="#4285F4"/><path d="M24 6l1.2 4.2L29 11.5l-3.8 1.3L24 17l-1.2-4.2L19 11.5l3.8-1.3z" fill="#34A853" opacity="0.7"/><path d="M8 22l1 3.5 3.5 1.2-3.5 1.2L8 31.5l-1-3.5L3.5 26.8l3.5-1.2z" fill="#FBBC04" opacity="0.7"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="PostgreSQL">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M23.3 24.5c-.3 2.1.5 2.6 1.7 2.8l.7.1c1.6.1 2.5-.5 3.1-1.3.7-1 1.2-2.7 1.1-4.8 0-.4 0-.7-.1-1.1-1.1 2.8-3.9 3.8-6.5 4.3z" fill="#336791"/><path d="M27.2 17c-.1-1.5-.2-2.2.6-3.5l.2-.3c.4-.7.8-1.5.8-3.4 0-3.5-2.5-6.4-3.3-7.2A11 11 0 0 0 16 0c-3.5 0-6.2 1.6-7.7 2.7 1-.5 3.3-1.3 5.6-1 3 .4 4 1.4 4.5 2.2L17 6.8l-1.3 4.7c-.2.8-.6 1.8-.4 3.4.1.7.4 2.7 2 3.5 1 .5 2.4.3 2.7.2l.2.8c.3 1 .6 2 .6 3.1 0 .8-.1 1.5-.4 2.1l.2-.1c3-1 5.9-2.3 6.6-5.3-.3-1.1-.2-1.8 0-2.2zM14 13.5c0 .1-.7.1-.8.1-1.2 0-2.1-.3-2.5-.7l.3-1.2c.3.5 1.4 1 2.5.8l.4.4.1.6z" fill="#336791"/><path d="M12.3 7.5c-2.9.3-4.7 2.2-5.3 3.8-.7 2-.3 4 .5 5.2 1 1.3 2.7 2.2 4.3 2.3.7 0 1.2-.1 1.6-.3-.2-.8-.4-1.7-.3-2.8-1.2.2-2.1-.2-2.8-1-.6-.8-.8-1.8-.6-2.8.3-1.5 1.3-2.5 2.6-2.7h.4l-.4-1.7z" fill="#336791"/></svg>
-            </div></div>
-                        </div>
-                    </div>
+          </article>
 
-                    <!-- Project 2 -->
-                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-secondary/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center" data-animation="fade-up" style="animation-delay: 100ms;">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full border border-secondary/20">Web Application</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-secondary transition-colors">Resume Builder</h3>
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                A responsive Resume Builder that allows users to create professional resumes with a modern interface and instantly preview and download them.
-                            </p>
-                            <div class="flex items-center gap-4 mt-auto">
-                                <a href="https://pavanrameshmalthi.github.io/RESUME-BUILDER/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-secondary font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/PavanRameshMalthi/RESUME-BUILDER.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
-                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="HTML">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#E44D26"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#F16529"/><path d="M16 13.6h-4.2l-.3-3.2H16V7.3H8.3l.1.8.8 9.5H16zm0 8.6l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 13.6v3.1h3.9l-.4 4.1L16 22.2v3.2l7-1.9.1-.6.8-9.3.1-.8H16zm0-6.3v3.1h7.4l.1-.6.1-1.7.1-.8z" fill="#fff"/></svg>
+          <!-- Project 4: CGPA Calculator -->
+          <article class="project-card fade-up delay-1">
+            <div class="project-image-container">
+              <img src="images/cgpa-calculator-mockup.svg" alt="CGPA Calculator Application Preview" class="project-image" loading="lazy">
             </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="CSS">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#1572B6"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#33A9DC"/><path d="M16 16.7h-4.2l-.3-3.2H16V10.3H8.1l.1.8.9 9.5h7zm0 6.5l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 16.7v3.2h3.7l-.4 4-3.3.9v3.2l7-1.9.1-.6.8-9.5.1-.8H16zm0-6.4v3.2h7.4l.3-3.2z" fill="#fff"/></svg>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">Utility Tool</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">CGPA Calculator</h3>
+              <p class="project-desc">
+                An intuitive academic utility that converts semester SGPA values into overall cumulative CGPA, calculating percentage classifications and weighted credits without page reloads.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Algorithms</span>
+              </div>
+              <div class="project-links">
+                <a href="https://pavanrameshmalthi.github.io/SCGPA-TO-CGPA/" target="_blank" rel="noopener noreferrer" class="btn-project demo" aria-label="Live Demo for CGPA Calculator">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/PavanRameshMalthi/SCGPA-TO-CGPA.git" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View CGPA Calculator on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Code</span>
+                </a>
+              </div>
             </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
-            </div></div>
-                        </div>
-                    </div>
+          </article>
 
-                    <!-- Project 3 -->
-                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-blue-400/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center" data-animation="fade-up" style="animation-delay: 200ms;">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20">Web Application</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-blue-400 transition-colors">Weather Tracker</h3>
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                A responsive weather application that fetches and displays real-time weather information using a weather API with an intuitive and clean interface.
-                            </p>
-                            <div class="flex items-center gap-4 mt-auto">
-                                <a href="https://pavanrameshmalthi.github.io/WEATHER/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-blue-400 font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/PavanRameshMalthi/WEATHER.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
-                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="HTML">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#E44D26"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#F16529"/><path d="M16 13.6h-4.2l-.3-3.2H16V7.3H8.3l.1.8.8 9.5H16zm0 8.6l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 13.6v3.1h3.9l-.4 4.1L16 22.2v3.2l7-1.9.1-.6.8-9.3.1-.8H16zm0-6.3v3.1h7.4l.1-.6.1-1.7.1-.8z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="CSS">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#1572B6"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#33A9DC"/><path d="M16 16.7h-4.2l-.3-3.2H16V10.3H8.1l.1.8.9 9.5h7zm0 6.5l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 16.7v3.2h3.7l-.4 4-3.3.9v3.2l7-1.9.1-.6.8-9.5.1-.8H16zm0-6.4v3.2h7.4l.3-3.2z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="Weather API">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full text-text-muted"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div></div>
-                        </div>
-                    </div>
+        </div>
+      </section>
 
-                    <!-- Project 4 -->
-                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-yellow-400/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center" data-animation="fade-up" style="animation-delay: 300ms;">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-yellow-500/10 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full border border-yellow-500/20">Utility Application</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-yellow-400 transition-colors">SGPA to CGPA Calculator</h3>
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                A CGPA calculator that converts semester grades into cumulative CGPA with a clean interface and instant calculations.
-                            </p>
-                            <div class="flex items-center gap-4 mt-auto">
-                                <a href="https://pavanrameshmalthi.github.io/SCGPA-TO-CGPA/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text hover:text-yellow-400 font-medium transition-colors text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg border border-border">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/PavanRameshMalthi/SCGPA-TO-CGPA.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
-                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="HTML">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#E44D26"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#F16529"/><path d="M16 13.6h-4.2l-.3-3.2H16V7.3H8.3l.1.8.8 9.5H16zm0 8.6l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 13.6v3.1h3.9l-.4 4.1L16 22.2v3.2l7-1.9.1-.6.8-9.3.1-.8H16zm0-6.3v3.1h7.4l.1-.6.1-1.7.1-.8z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="CSS">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#1572B6"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#33A9DC"/><path d="M16 16.7h-4.2l-.3-3.2H16V10.3H8.1l.1.8.9 9.5h7zm0 6.5l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 16.7v3.2h3.7l-.4 4-3.3.9v3.2l7-1.9.1-.6.8-9.5.1-.8H16zm0-6.4v3.2h7.4l.3-3.2z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
-            </div></div>
-                        </div>
-                    </div>
+      <!-- 4. SKILLS SECTION -->
+      <section id="skills" class="skills-section">
+        <div class="section-header skills-header fade-up">
+          <h2 class="section-title">Skills</h2>
+        </div>
 
-                    <!-- Project 5 -->
-                    <div class="project-card animate-on-scroll group bg-bg-card border border-border rounded-2xl overflow-hidden hover:border-purple-400/50 transition-colors flex flex-col md:flex-row p-8 lg:p-12 gap-8 items-center" data-animation="fade-up" style="animation-delay: 400ms;">
-                        <div class="w-full md:w-3/5 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-purple-500/10 text-purple-400 text-xs font-bold px-3 py-1 rounded-full border border-purple-500/20">Web Application</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text mb-4 group-hover:text-purple-400 transition-colors">To-Do List</h3>
-                            <p class="text-text-muted mb-8 leading-relaxed">
-                                A task management application that allows users to create, update, organize, and delete daily tasks with a simple and responsive interface.
-                            </p>
-                            <div class="flex items-center gap-4 mt-auto">
-                                <a href="https://github.com/PavanRameshMalthi/TO-DO-LIST.git" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-text-muted hover:text-text font-medium transition-colors text-sm hover:bg-white/5 px-4 py-2 rounded-lg border border-transparent">
-                                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/5 flex items-center justify-center md:justify-end">
-                            <div class="flex flex-wrap gap-4 justify-start md:justify-end items-center">
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="HTML">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#E44D26"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#F16529"/><path d="M16 13.6h-4.2l-.3-3.2H16V7.3H8.3l.1.8.8 9.5H16zm0 8.6l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 13.6v3.1h3.9l-.4 4.1L16 22.2v3.2l7-1.9.1-.6.8-9.3.1-.8H16zm0-6.3v3.1h7.4l.1-.6.1-1.7.1-.8z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="CSS">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><path d="M4.7 28.5L2.5 3.2h27l-2.2 25.3L16 31z" fill="#1572B6"/><path d="M16 29.1l8.2-2.3 1.9-21.2H16z" fill="#33A9DC"/><path d="M16 16.7h-4.2l-.3-3.2H16V10.3H8.1l.1.8.9 9.5h7zm0 6.5l-4.1-1.1-.3-3.1H8.5l.5 5.5 7 1.9z" fill="#EBEBEB"/><path d="M16 16.7v3.2h3.7l-.4 4-3.3.9v3.2l7-1.9.1-.6.8-9.5.1-.8H16zm0-6.4v3.2h7.4l.3-3.2z" fill="#fff"/></svg>
-            </div>
-            <div class="w-12 h-12 p-2.5 bg-bg-card border border-border rounded-full flex items-center justify-center hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all cursor-default" title="JavaScript">
-                <svg viewBox="0 0 32 32" class="w-full h-full" role="img" aria-hidden="true"><rect   rx="2" fill="#F7DF1E"/><path d="M8.4 26.2l2.5-1.5c.5.9 .9 1.6 1.9 1.6 1 0 1.6-.4 1.6-1.9V15h3v9.4c0 3.2-1.9 4.6-4.6 4.6-2.5 0-3.9-1.3-4.4-2.8zm10.5-.4l2.5-1.4c.6 1 1.4 1.8 2.8 1.8 1.2 0 1.9-.6 1.9-1.4 0-1-.8-1.3-2.1-1.9l-.7-.3c-2.1-.9-3.5-2-3.5-4.4 0-2.2 1.7-3.8 4.3-3.8 1.9 0 3.2.7 4.2 2.4l-2.3 1.5c-.5-.9-1-1.3-1.9-1.3-.9 0-1.4.6-1.4 1.3 0 .9.6 1.3 1.9 1.8l.7.3c2.5 1 3.9 2.1 3.9 4.5 0 2.6-2 4-4.7 4-2.6 0-4.3-1.3-5.1-2.9z" fill="#000"/></svg>
-            </div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="skills-cloud">
 
-        <!-- 11. CONTACT SECTION -->
-        <section id="contact" class="py-24 relative z-10">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col items-center mb-16 animate-on-scroll" data-animation="fade-up">
-                    <h2 class="text-3xl md:text-5xl font-bold text-text mb-4 relative inline-block">
-                        Get In Touch
-                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full"></span>
-                    </h2>
-                    <p class="text-text-muted text-center max-w-2xl mt-4">Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
-                </div>
+          <!-- 1. C -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" fill="#283593"/>
+              <path d="M14.5 8.5a4.5 4.5 0 1 0 0 7c.8 0 1.5-.3 2.1-.8l-1.3-1.3c-.3.3-.5.4-.8.4a2.7 2.7 0 1 1 0-3.6c.3 0 .5.1.8.4l1.3-1.3c-.6-.5-1.3-.8-2.1-.8z" fill="#FFFFFF"/>
+            </svg>
+            <span>C</span>
+          </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Contact Cards -->
-                    <a href="mailto:pavanrameshmalthi886@gmail.com" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer animate-on-scroll" data-animation="fade-up" style="animation-delay: 100ms;">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg text-text font-bold mb-1">Email</h3>
-                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">Send me an email</span>
-                        </div>
-                    </a>
-                    
-                    <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer animate-on-scroll" data-animation="fade-up" style="animation-delay: 200ms;">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
-                            <svg viewBox="0 0 32 32" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg text-text font-bold mb-1">GitHub</h3>
-                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">View my projects</span>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="bg-bg-card border border-border p-6 rounded-2xl flex flex-col items-center text-center gap-4 hover:bg-white/5 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group cursor-pointer md:col-span-2 lg:col-span-1 animate-on-scroll" data-animation="fade-up" style="animation-delay: 300ms;">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-transform">
-                            <svg viewBox="0 0 24 24" class="w-8 h-8" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg text-text font-bold mb-1">LinkedIn</h3>
-                            <span class="text-text-muted font-medium text-sm transition-colors group-hover:text-primary">Let's connect professionally</span>
-                        </div>
-                    </a>
-                </div>
+          <!-- 2. Python -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <path d="M11.9 2c-3.1 0-2.9 1.3-2.9 1.3l.01 1.4h2.9v.4H6.2S3.8 4.8 3.8 8.1s2.1 3.2 2.1 3.2h1.3v-1.8s-.1-2.1 2.1-2.1h3.6s2-.01 2-2V4.8s.27-2.8-3-2.8zm-1.6 1.1c.36 0 .65.29.65.65s-.29.65-.65.65-.65-.29-.65-.65.29-.65.65-.65z" fill="#3776AB"/>
+              <path d="M12.1 22c3.1 0 2.9-1.3 2.9-1.3l-.01-1.4h-2.9v-.4h5.7s2.4.3 2.4-3-2.1-3.2-2.1-3.2h-1.3v1.8s.1 2.1-2.1 2.1h-3.6s-2 .01-2 2v2.5s-.27 2.8 3 2.8zm1.6-1.1c-.36 0-.65-.29-.65-.65s.29-.65.65-.65.65.29.65.65-.29.65-.65.65z" fill="#FFD43B"/>
+            </svg>
+            <span>Python</span>
+          </div>
+
+          <!-- 3. Java -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <path d="M8.8 16.5c-1.3.1-2.4-.2-2.4-.2s.8.6 2.3.8c3 .3 5.4-.1 6.8-.7-.2.2-1.8.8-4.5.8-3.1 0-4.6-.9-4.6-.9s1.1.7 3.5.7c3.9 0 6.6-1.2 6.6-1.2s-2.7.5-7.7.7zm-.6 2.3c-1 .1-1.7-.1-1.7-.1s.6.4 1.7.5c2.3.2 4.3 0 5.3-.4-.2.1-1.4.5-3.5.5-2.4 0-3.6-.6-3.6-.6s.9.5 2.8.5c3.1 0 5.2-.8 5.2-.8s-2.1.3-6.2.4zm7.9-7.2c.4 1.3-.3 2.7-1.7 3.6 2.2-.4 3.7-1.8 3-3.2-.6-1.3-2.4-1.9-4.2-2.3 1.4.3 2.5.8 2.9 1.9z" fill="#5382A1"/>
+              <path d="M12.3 3.5c1.4 1.7-.8 3.3-1.6 4.7-.6 1-.7 1.9-.3 2.8-1.1-1.2-1.3-2.7-.6-4.1.9-1.9 2.5-2.7 2.5-3.4zm2.8 2.8c.8 1.4-.4 2.8-1.2 3.9-.7 1-.9 1.8-.7 2.6-.8-1-1-2.3-.5-3.5.7-1.5 2-2.2 2.4-3z" fill="#E76F00"/>
+              <path d="M6.2 21.5s1.8.6 5.8.6c4.6 0 7.2-.8 7.2-.8s-1.5.5-4.6.7c-4.1.2-6.8-.2-8.4-.5z" fill="#5382A1"/>
+            </svg>
+            <span>Java</span>
+          </div>
+
+          <!-- 4. JavaScript -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="4" fill="#F7DF1E"/>
+              <path d="M6 19.5l2-1.2c.4.8.7 1.3 1.5 1.3.8 0 1.3-.3 1.3-1.5V10.5h2.4V18c0 2.5-1.5 3.6-3.7 3.6-2 0-3.1-1-3.5-2.1zm8.3-.3l2-1.1c.5.8 1.1 1.4 2.2 1.4 1 0 1.5-.5 1.5-1.1 0-.8-.6-1-1.7-1.5l-.6-.2c-1.7-.7-2.8-1.6-2.8-3.5 0-1.8 1.4-3 3.4-3 1.5 0 2.6.6 3.4 1.9l-1.8 1.2c-.4-.7-.8-1-1.5-1-.7 0-1.1.5-1.1 1 0 .7.5 1 1.5 1.4l.6.2c2 1 3.1 1.7 3.1 3.6 0 2.1-1.6 3.2-3.8 3.2-2.1 0-3.4-1-4.2-2.3z" fill="#000000"/>
+            </svg>
+            <span>JavaScript</span>
+          </div>
+
+          <!-- 5. HTML5 -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <path d="M1.5 0h21l-1.9 21.6L12 24l-8.6-2.4L1.5 0zm7 9.8l-.2-2.7h10.1l.2-2.6H5.4l.7 8h9.1l-.3 3.4-2.9.8-3-.8-.2-2.1H6.2l.3 4.2 5.5 1.5 5.4-1.4.7-8.2H8.5z" fill="#E34F26"/>
+            </svg>
+            <span>HTML5</span>
+          </div>
+
+          <!-- 6. CSS3 -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <path d="M1.5 0h21l-1.9 21.6L12 24l-8.6-2.4L1.5 0zm17.1 4.4H5.4l.2 2.6h10.1l-.2 2.7H6.3l.2 2.6h9.1l-.3 3.4-2.9.8-3-.8-.2-2.1H6.2l.3 4.2 5.5 1.5 5.4-1.4.7-8.2z" fill="#1572B6"/>
+            </svg>
+            <span>CSS3</span>
+          </div>
+
+          <!-- 7. React.js -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="none">
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#61DAFB" stroke-width="1.5"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" stroke="#61DAFB" stroke-width="1.5"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" stroke="#61DAFB" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="2" fill="#61DAFB"/>
+            </svg>
+            <span>React.js</span>
+          </div>
+
+          <!-- 8. Next.js -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10.5" fill="#000000" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+              <path d="M8.5 7.5v9l7.2-9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="15.7" y1="7.5" x2="15.7" y2="13.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Next.js</span>
+          </div>
+
+          <!-- 9. Tailwind CSS -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="#06B6D4">
+              <path d="M12 4.25c-3.25 0-5.5 2-6.5 6 1.5-2 3-2.5 4.5-2 1.2.4 2.1 1.3 2.9 2.2 1.2 1.3 2.5 2.8 5.1 2.8 3.25 0 5.5-2 6.5-6-1.5 2-3 2.5-4.5 2-1.2-.4-2.1-1.3-2.9-2.2-1.2-1.3-2.5-2.8-5.1-2.8zM5.5 10.25c-3.25 0-5.5 2-6.5 6 1.5-2 3-2.5 4.5-2 1.2.4 2.1 1.3 2.9 2.2 1.2 1.3 2.5 2.8 5.1 2.8 3.25 0 5.5-2 6.5-6-1.5 2-3 2.5-4.5 2-1.2-.4-2.1-1.3-2.9-2.2-1.2-1.3-2.5-2.8-5.1-2.8z"/>
+            </svg>
+            <span>Tailwind CSS</span>
+          </div>
+
+          <!-- 10. Node.js -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="#5FA04E">
+              <path d="M12 0L2 5.4v11.2L12 24l10-7.4V5.4L12 0zm0 2.2l7.8 4.2v8.5L12 19.1l-7.8-4.2V6.4L12 2.2z"/>
+            </svg>
+            <span>Node.js</span>
+          </div>
+
+          <!-- 11. Express.js -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="4" fill="#252528"/>
+              <text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" font-family="'Inter', sans-serif">ex</text>
+            </svg>
+            <span>Express.js</span>
+          </div>
+
+          <!-- 12. REST APIs -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+            <span>REST APIs</span>
+          </div>
+
+          <!-- 13. SQL -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+            <span>SQL</span>
+          </div>
+
+          <!-- 14. PostgreSQL -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <path fill="#336791" d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.66 1.44 5.17L2.5 21.5l4.55-.91A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1.68 15.36c-1.32.18-2.67-.18-3.72-.98-.44.73-.72 1.57-.8 2.45-.63-.33-1.22-.73-1.74-1.2-.44-.39-.83-.84-1.17-1.32.74-.78 1.63-1.4 2.63-1.82-.41-.95-.6-1.97-.57-3 .05-1.45.65-2.82 1.69-3.83 1.05-1.01 2.44-1.57 3.9-1.56 1.4.01 2.74.57 3.73 1.55.98.98 1.54 2.31 1.55 3.71.02 1.74-.82 3.37-2.22 4.35-.95.66-2.11 1.04-3.32 1.1l.05.55z"/>
+            </svg>
+            <span>PostgreSQL</span>
+          </div>
+
+          <!-- 15. MongoDB -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="#47A248">
+              <path d="M12 0s-6 8.5-6 13.5c0 4.5 3.5 7.5 6 7.5s6-3 6-7.5C18 8.5 12 0 12 0zm0 18.5c-2.5 0-4-2-4-5 0-3 2.5-6.5 4-8 1.5 1.5 4 5 4 8 0 3-1.5 5-4 5z"/>
+            </svg>
+            <span>MongoDB</span>
+          </div>
+
+          <!-- 16. Git -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="#F05032">
+              <path d="M23.5 10.9L13 .5a1.4 1.4 0 0 0-2 0L8.6 2.9l3.3 3.3a2 2 0 0 1 1.6 1.3l3.4 3.4a2 2 0 1 1-3.1-1.6l-3.2-3.2v4.6a2 2 0 1 1-1.2 0V7.3a2 2 0 0 1-1.7-1.3L6.5 2.8 1.5 7.8a1.4 1.4 0 0 0 0 2l10.5 10.5c.6.6 1.5.6 2 0l9.6-9.6c.5-.5.5-1.4-.1-1.8z"/>
+            </svg>
+            <span>Git</span>
+          </div>
+
+          <!-- 17. GitHub -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="#FFFFFF">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>GitHub</span>
+          </div>
+
+          <!-- 18. VS Code -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#0065A9" d="M17.5 1.5c-.4 0-.8.2-1.1.5L7.7 9.2 4.3 6.6c-.4-.3-.9-.4-1.4-.2-.5.2-.8.6-.9 1.1v9c0 .5.3.9.8 1.1.5.2 1 .1 1.4-.2l3.5-2.6 8.7 7.2c.3.3.7.4 1.1.4.3 0 .6-.1.9-.3.6-.4.9-1 .9-1.7V3.5c0-.7-.3-1.3-.9-1.7-.3-.2-.6-.3-.9-.3z"/>
+              <path fill="#007ACC" d="M18.7 3.5v17c0 .2-.1.4-.3.5-.2.1-.4.1-.6 0l-8.2-6.8 3.2-2.7 5.9 4.7V7.8l-5.9 4.7-3.2-2.7 8.2-6.8c.2-.1.4-.1.6 0 .2.1.3.3.3.5z"/>
+              <path fill="#1F8AD2" d="M4.3 8.2l6.2 3.8-6.2 3.8V8.2z"/>
+              <path fill="#23A9F2" d="M15.7 7.2L9.6 12l6.1 4.8V7.2z"/>
+            </svg>
+            <span>VS Code</span>
+          </div>
+
+          <!-- 19. MS Office -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#EB3C00" d="M21.5 5.5l-9-3c-.3-.1-.7 0-.9.2L2.5 8.7c-.3.2-.5.6-.5 1v8.6c0 .4.2.8.5 1l9.1 6c.2.1.4.2.6.2.2 0 .4-.1.6-.2l8.8-5.8c.4-.2.6-.6.6-1V6.5c-.1-.4-.3-.8-.7-1zm-9.5 15.3L4 15.6V9.8l8 5.3v5.7zm1-7.1l-7.7-5.1 7.2-4.5 7.7 5.1-7.2 4.5zm6.5 2.6l-5.5 3.7v-5.8l5.5-3.7v5.8z"/>
+            </svg>
+            <span>MS Office</span>
+          </div>
+
+          <!-- 20. Prompt Engineering -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a9 9 0 0 0-9 9c0 3.31 1.79 6.2 4.5 7.82v1.68a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5v-1.68C19.21 17.2 21 14.31 21 11a9 9 0 0 0-9-9ZM9 22h6"/>
+            </svg>
+            <span>Prompt Engineering</span>
+          </div>
+
+          <!-- 21. Gemini AI -->
+          <div class="skill-pill fade-up">
+            <svg class="pill-icon" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#60A5FA"/>
+                  <stop offset="50%" stop-color="#818CF8"/>
+                  <stop offset="100%" stop-color="#C084FC"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z" fill="url(#geminiGrad)"/>
+            </svg>
+            <span>Gemini AI</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 5. ABOUT SECTION (TIMELINE STYLE) -->
+      <section id="about" class="about-section">
+        <div class="section-header fade-up">
+          <div class="section-tag">Background</div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A brief overview of my engineering journey, educational foundation, and software experience.</p>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Left: Bio & Focus Areas -->
+          <div class="about-bio-card fade-up">
+            <h3 class="about-bio-title">Hello! I'm Pavan Ramesh Malthi.</h3>
+            <p class="about-bio-text">
+              I am a Bachelor of Computer Applications student passionate about engineering resilient full-stack systems. I thrive at the intersection of modern JavaScript frameworks, robust backend API architecture, and practical artificial intelligence integration.
+            </p>
+            <p class="about-bio-text">
+              My goal is to craft performant web software that is both technically scalable and visually delightful to navigate.
+            </p>
+
+            <div class="interests-container">
+              <div class="interests-title">Core Interests</div>
+              <div class="interests-tags">
+                <span class="interest-tag">Full-Stack Architecture</span>
+                <span class="interest-tag">AI Integration</span>
+                <span class="interest-tag">Clean Code</span>
+                <span class="interest-tag">UI/UX Systems</span>
+                <span class="interest-tag">RESTful APIs</span>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <!-- Right: Timeline Layout -->
+          <div class="timeline-wrapper">
+
+            <!-- Timeline Item 1: Experience -->
+            <div class="timeline-item fade-up">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date-badge">2026 · 45-Day Intensive</span>
+                <h3 class="timeline-role">MERN Stack Development Intern</h3>
+                <div class="timeline-organization">Adhoc Network Tech</div>
+                <p class="timeline-desc">
+                  Completed an intensive internship centered on full-stack web engineering. Developed real-world web applications utilizing React, Node.js, Express.js, and MongoDB. Gained deep hands-on expertise in REST API creation, authentication flows, database schema modeling, Git collaboration, and agile problem solving.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2: Education -->
+            <div class="timeline-item fade-up delay-1">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date-badge">2024 &ndash; 2027</span>
+                <h3 class="timeline-role">Bachelor of Computer Applications (BCA)</h3>
+                <div class="timeline-organization">Aditya Degree College</div>
+                <p class="timeline-desc">
+                  Pursuing undergraduate degree in Computer Applications with coursework spanning Data Structures, Database Management Systems, Object-Oriented Programming (Java/C), Web Technologies, and Software Engineering. Expected graduation: April 2027.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 6. CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="section-header contact-header fade-up">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Have an idea, an opportunity, or just want to connect? Feel free to reach out.</p>
+        </div>
+
+        <div class="contact-cards-grid">
+
+          <!-- CARD 1: GitHub -->
+          <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="contact-card fade-up" aria-label="View Pavan Ramesh Malthi's GitHub Profile">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </div>
+            <span class="contact-card-category">GitHub</span>
+            <div class="contact-card-value">PavanRameshMalthi</div>
+            <p class="contact-card-desc">View my projects</p>
+          </a>
+
+          <!-- CARD 2: LinkedIn -->
+          <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="contact-card fade-up delay-1" aria-label="Connect with Pavan Ramesh Malthi on LinkedIn">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/>
+              </svg>
+            </div>
+            <span class="contact-card-category">LinkedIn</span>
+            <div class="contact-card-value">Pavan Ramesh Malthi</div>
+            <p class="contact-card-desc">Let's connect professionally</p>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- 7. FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-left">
+          <span>&copy; <span id="current-year"></span> Pavan Ramesh Malthi. Crafted with minimalism &amp; precision.</span>
+        </div>
+        <div class="footer-right">
+          <a href="#hero" id="btn-back-top" class="btn-back-top" aria-label="Back to Top">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </footer>
+
     </main>
+  </div>
 
-    <!-- 12. FOOTER -->
-    <footer class="bg-bg-primary border-t border-border mt-12 py-8 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center">
-            <p class="text-text font-medium flex items-center gap-2 mb-6">
-                Designed & Developed by Malthi Pavan Ramesh
-            </p>
-            
-            <div class="flex items-center gap-6 mb-6">
-                <a href="mailto:pavanrameshmalthi886@gmail.com" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="Email">
-                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/pavan-ramesh-malthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="https://github.com/PavanRameshMalthi" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary p-2 rounded-full bg-white/5 hover:bg-primary/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)]" aria-label="GitHub">
-                    <svg viewBox="0 0 32 32" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.5 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.4 2.1 1.4 1.3 2.1 3.3 1.5 4.1 1.1.1-.9.5-1.5.9-1.8-3.1-.3-6.4-1.6-6.4-7 0-1.5.6-2.8 1.4-3.8-.1-.4-.6-1.8.1-3.8 0 0 1.2-.4 3.8 1.4 1.1-.3 2.3-.5 3.5-.5s2.4.2 3.5.5c2.7-1.8 3.8-1.4 3.8-1.4.8 2 .3 3.4.1 3.8.9 1 1.4 2.2 1.4 3.8 0 5.4-3.3 6.6-6.4 7 .5.4 1 1.3 1 2.6v3.9c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z"/></svg>
-                </a>
-            </div>
-            
-            <p class="text-text-muted text-sm">
-                &copy; <span id="footer-year"></span> | All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Script connection -->
-    <script src="js/script.js"></script>
-    
-    <!-- Inline minimal script to ensure initialization if external fails or takes time -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-            
-            // Set current year
-            const yearSpan = document.getElementById('footer-year');
-            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-        });
-    </script>
+  <!-- JavaScript Execution -->
+  <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
