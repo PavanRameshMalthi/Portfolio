@@ -12,11 +12,11 @@ A modern, Apple-inspired, minimalist portfolio website for **Pavan Ramesh Malthi
 • **Permanent Dark Theme**: Refined `#08090B` dark interface with deep contrast and glowing accent states.  
 • **6 Core Sections**:
   1. **Sticky Glass Navigation**: Floating pill navbar with availability indicator and smooth section scrolling.
-  2. **Hero Section**: Typographic hierarchy, value statement, quick action CTAs (`Contact Me`, `GitHub`, `LinkedIn`), and live engineering preview card.
-  3. **Featured Projects**: Responsive grid showcasing *AI Mock Interview*, *Resume Builder*, *Weather Application*, and *CGPA Calculator* with hover elevation and live demo/code links.
-  4. **Categorized Skills**: Rounded badges with custom SVG icons across Frontend, Backend, Database, Languages, and Tools/AI.
-  5. **About (Timeline Style)**: Interactive journey highlighting MERN stack internship experience at Adhoc Network Tech and BCA degree at Aditya Degree College.
-  6. **Contact**: 2 modern glassmorphic contact cards (GitHub, LinkedIn) with subtle lift and soft blue glow animations.
+  2. **Hero Section**: Typographic hierarchy, value statement, quick action CTAs (`Contact Me`, `GitHub`, `LinkedIn`), and live interactive terminal visual.
+  3. **About (Timeline Style)**: Interactive journey highlighting MERN stack internship experience at Adhoc Network Tech and BCA degree at Aditya Degree College.
+  4. **Featured Projects**: Responsive grid showcasing *AI Mock Interview*, *Resume Builder*, *Weather Application*, and *CGPA Calculator* with hover elevation and live demo/code links.
+  5. **Categorized Skills**: Rounded badges with embedded SVG icons across Frontend, Backend, Database, Languages, and Tools/AI.
+  6. **Contact**: 3 modern glassmorphic contact cards (Email, GitHub, LinkedIn) with subtle lift and soft blue glow animations.
 
 ---
 
@@ -24,27 +24,17 @@ A modern, Apple-inspired, minimalist portfolio website for **Pavan Ramesh Malthi
 
 - **HTML5**: Semantic elements, accessible ARIA attributes, OpenGraph, and JSON-LD structured schema.
 - **CSS3**: CSS Custom Properties (Variables), Flexbox, CSS Grid, Backdrop Filter, animations. Zero external CSS frameworks.
-- **Vanilla JavaScript**: IntersectionObserver scroll triggers, active section tracking, mobile overlay handling.
+- **Vanilla JavaScript**: IntersectionObserver scroll triggers, active section tracking, mobile overlay handling, and terminal simulation.
 
 ---
 
-## 📂 Project Structure
+## 📂 Simplified Project Structure
 
 ```text
 Portfolio/
-├── assets/
-├── css/
-│   └── style.css               # Design tokens, glassmorphism, responsive styles
-├── images/
-│   ├── ai-interview-mockup.svg # AI Mock Interview device preview
-│   ├── cgpa-calculator-mockup.svg # CGPA Calculator interface preview
-│   ├── favicon.svg             # Modern vector favicon
-│   ├── resume-builder-mockup.svg # Resume Builder UI preview
-│   └── weather-tracker-mockup.svg # Weather Tracker dashboard preview
-├── js/
-│   └── script.js               # Vanilla JS interactions and scroll observer
-├── .gitignore                  # Git ignore rules
-├── index.html                  # Main static single-page structure
+├── index.html                  # Semantic markup with embedded vector assets
+├── style.css                   # Unified design system and responsive styles
+├── script.js                   # High-performance vanilla interactions
 ├── package.json                # NPM configuration
 └── README.md                   # Documentation
 ```
