@@ -45,7 +45,7 @@
       "https://github.com/PavanRameshMalthi",
       "https://www.linkedin.com/in/pavan-ramesh-malthi"
     ],
-    "knowsAbout": ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "JavaScript", "AI Integration"]
+    "knowsAbout": ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "JavaScript", "AI Integration"]
   }
   </script>
 </head>
@@ -277,8 +277,161 @@
 
         <div class="projects-grid">
 
-          <!-- Project 1: AI Mock Interview -->
+          <!-- Project 1: GeneGuard AI -->
           <article class="project-card fade-up">
+            <div class="project-image-container">
+              <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="GeneGuard AI Preventive Health Intelligence Platform Preview">
+                <defs>
+                  <linearGradient id="geneBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0e1017"/>
+                    <stop offset="100%" stop-color="#08090b"/>
+                  </linearGradient>
+                  <linearGradient id="geneEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981"/>
+                    <stop offset="100%" stop-color="#06b6d4"/>
+                  </linearGradient>
+                  <linearGradient id="geneAiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6"/>
+                    <stop offset="50%" stop-color="#8b5cf6"/>
+                    <stop offset="100%" stop-color="#ec4899"/>
+                  </linearGradient>
+                  <filter id="geneCardShadow" x="-10%" y="-10%" width="120%" height="125%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+                  </filter>
+                </defs>
+                <rect width="800" height="500" fill="url(#geneBgGrad)"/>
+                <g opacity="0.12" stroke="#ffffff" stroke-width="0.5">
+                  <line x1="0" y1="100" x2="800" y2="100"/>
+                  <line x1="0" y1="200" x2="800" y2="200"/>
+                  <line x1="0" y1="300" x2="800" y2="300"/>
+                  <line x1="0" y1="400" x2="800" y2="400"/>
+                  <line x1="160" y1="0" x2="160" y2="500"/>
+                  <line x1="320" y1="0" x2="320" y2="500"/>
+                  <line x1="480" y1="0" x2="480" y2="500"/>
+                  <line x1="640" y1="0" x2="640" y2="500"/>
+                </g>
+                <circle cx="680" cy="130" r="150" fill="#10b981" opacity="0.1"/>
+                <circle cx="140" cy="380" r="130" fill="#3b82f6" opacity="0.08"/>
+                <rect x="40" y="35" width="720" height="430" rx="20" fill="rgba(18, 18, 22, 0.88)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" filter="url(#geneCardShadow)"/>
+                <rect x="40" y="35" width="720" height="48" rx="20" fill="rgba(255, 255, 255, 0.02)"/>
+                <circle cx="70" cy="59" r="5" fill="#ef4444" opacity="0.8"/>
+                <circle cx="88" cy="59" r="5" fill="#f59e0b" opacity="0.8"/>
+                <circle cx="106" cy="59" r="5" fill="#10b981" opacity="0.8"/>
+                <rect x="290" y="47" width="220" height="24" rx="12" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                <text x="400" y="63" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="500" text-anchor="middle">geneguard-ai.health</text>
+                
+                <!-- Left Column: Biometric Health Score -->
+                <rect x="65" y="105" width="220" height="335" rx="14" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                <text x="85" y="135" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600">Health Intelligence</text>
+                <rect x="85" y="150" width="86" height="20" rx="10" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+                <text x="128" y="164" fill="#34d399" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">OPTIMAL SCORE</text>
+                
+                <!-- Circular Gauge -->
+                <circle cx="175" cy="235" r="46" fill="none" stroke="rgba(255, 255, 255, 0.06)" stroke-width="8"/>
+                <circle cx="175" cy="235" r="46" fill="none" stroke="url(#geneEmeraldGrad)" stroke-width="8" stroke-dasharray="289" stroke-dashoffset="24" stroke-linecap="round" transform="rotate(-90 175 235)"/>
+                <text x="175" y="238" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="22" font-weight="700" text-anchor="middle">92</text>
+                <text x="175" y="254" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="10" text-anchor="middle">Overall Health Index</text>
+                
+                <!-- Metric Bars -->
+                <text x="85" y="315" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11">Cardiovascular</text>
+                <text x="265" y="315" fill="#34d399" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="end">Low Risk</text>
+                <rect x="85" y="323" width="180" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)"/>
+                <rect x="85" y="323" width="165" height="6" rx="3" fill="#10b981"/>
+                
+                <text x="85" y="355" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11">Metabolic &amp; Glucose</text>
+                <text x="265" y="355" fill="#38bdf8" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="end">Optimal</text>
+                <rect x="85" y="363" width="180" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)"/>
+                <rect x="85" y="363" width="152" height="6" rx="3" fill="#06b6d4"/>
+                
+                <text x="85" y="395" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11">Genetic Predisposition</text>
+                <text x="265" y="395" fill="#a78bfa" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="end">Analyzed</text>
+                <rect x="85" y="403" width="180" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)"/>
+                <rect x="85" y="403" width="170" height="6" rx="3" fill="#8b5cf6"/>
+                
+                <!-- Right Column Top: Lab Diagnostic & Genetic Risk Matrix -->
+                <rect x="300" y="105" width="435" height="205" rx="14" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                <rect x="320" y="123" width="32" height="32" rx="8" fill="url(#geneEmeraldGrad)"/>
+                <path d="M330 134 C333 130, 339 130, 342 134 C345 138, 339 144, 342 148" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="332" cy="144" r="1.5" fill="#ffffff"/>
+                <circle cx="340" cy="138" r="1.5" fill="#ffffff"/>
+                
+                <text x="362" y="137" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600">Lab Diagnostic &amp; Genetic Risk Matrix</text>
+                <text x="362" y="151" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11">Comprehensive Biomarker &amp; Hereditary Analysis</text>
+                
+                <!-- Mini Data Badges -->
+                <g transform="translate(320, 168)">
+                  <rect x="0" y="0" width="124" height="60" rx="8" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                  <text x="12" y="20" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="10">FASTING GLUCOSE</text>
+                  <text x="12" y="42" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="15" font-weight="700">88 <tspan fill="#34d399" font-size="10" font-weight="500">mg/dL ✓</tspan></text>
+                  <text x="12" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8.5">Ref: 70–99 mg/dL</text>
+                  
+                  <rect x="134" y="0" width="124" height="60" rx="8" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                  <text x="146" y="20" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="10">LIPID PANEL (HDL)</text>
+                  <text x="146" y="42" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="15" font-weight="700">62 <tspan fill="#34d399" font-size="10" font-weight="500">mg/dL ✓</tspan></text>
+                  <text x="146" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8.5">Optimal Protection</text>
+                  
+                  <rect x="268" y="0" width="127" height="60" rx="8" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                  <text x="280" y="20" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="10">HEREDITARY VECTORS</text>
+                  <text x="280" y="42" fill="#a78bfa" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="700">3 Generations</text>
+                  <text x="280" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8.5">Cardiometabolic Low</text>
+                </g>
+                
+                <!-- Active Modules Chips -->
+                <g transform="translate(320, 245)">
+                  <rect x="0" y="0" width="90" height="22" rx="6" fill="rgba(16, 185, 129, 0.1)" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1"/>
+                  <text x="45" y="15" fill="#34d399" font-family="'Inter', -apple-system, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">● Daily Tracking</text>
+                  
+                  <rect x="98" y="0" width="105" height="22" rx="6" fill="rgba(6, 182, 212, 0.1)" stroke="rgba(6, 182, 212, 0.25)" stroke-width="1"/>
+                  <text x="150" y="15" fill="#22d3ee" font-family="'Inter', -apple-system, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">● Care Calendar</text>
+                  
+                  <rect x="211" y="0" width="100" height="22" rx="6" fill="rgba(139, 92, 246, 0.1)" stroke="rgba(139, 92, 246, 0.25)" stroke-width="1"/>
+                  <text x="261" y="15" fill="#c084fc" font-family="'Inter', -apple-system, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">● Health Timeline</text>
+                  
+                  <rect x="319" y="0" width="76" height="22" rx="6" fill="rgba(59, 130, 246, 0.1)" stroke="rgba(59, 130, 246, 0.25)" stroke-width="1"/>
+                  <text x="357" y="15" fill="#60a5fa" font-family="'Inter', -apple-system, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">● SMART Goals</text>
+                </g>
+                
+                <!-- Right Column Bottom: Gemini AI Preventive Insights -->
+                <rect x="300" y="325" width="435" height="115" rx="14" fill="rgba(16, 185, 129, 0.05)" stroke="rgba(16, 185, 129, 0.22)" stroke-width="1"/>
+                <text x="320" y="352" fill="#34d399" font-family="'Inter', -apple-system, sans-serif" font-size="12" font-weight="600">✨ Google Gemini AI Clinical Health Copilot</text>
+                <text x="320" y="375" fill="#d4d4d8" font-family="'Inter', -apple-system, sans-serif" font-size="11">Biomarker trajectory indicates optimal glycemic control and healthy cardiac vitals.</text>
+                <text x="320" y="393" fill="#d4d4d8" font-family="'Inter', -apple-system, sans-serif" font-size="11">Recommendation: Maintain hydration habits &amp; schedule annual routine panel.</text>
+                <text x="320" y="420" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="10">Personalized Preventive Intelligence · MERN + Gemini API</text>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">Full Stack &amp; AI</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">GeneGuard AI</h3>
+              <p class="project-desc">
+                AI-powered preventive health intelligence platform that combines health assessments, biometric tracking, genetic risk insights, laboratory report analysis, and Google Gemini AI to provide personalized preventive health insights.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Mongoose</span>
+                <span class="tech-badge">Google Gemini AI</span>
+                <span class="tech-badge">JWT</span>
+                <span class="tech-badge">REST API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PavanRameshMalthi/GENEGUARD-AI" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View GeneGuard AI on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AI Mock Interview -->
+          <article class="project-card fade-up delay-1">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="AI Mock Interview Platform Interface Preview">
                 <defs>
@@ -383,8 +536,8 @@
             </div>
           </article>
 
-          <!-- Project 2: Resume Builder -->
-          <article class="project-card fade-up delay-1">
+          <!-- Project 3: Resume Builder -->
+          <article class="project-card fade-up">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Resume Builder Application Preview">
                 <defs>
@@ -491,8 +644,8 @@
             </div>
           </article>
 
-          <!-- Project 3: Weather Application -->
-          <article class="project-card fade-up">
+          <!-- Project 4: Weather Application -->
+          <article class="project-card fade-up delay-1">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Weather Tracker Application Preview">
                 <defs>
@@ -604,8 +757,8 @@
             </div>
           </article>
 
-          <!-- Project 4: CGPA Calculator -->
-          <article class="project-card fade-up delay-1">
+          <!-- Project 5: CGPA Calculator -->
+          <article class="project-card fade-up">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="CGPA Calculator Application Preview">
                 <defs>
