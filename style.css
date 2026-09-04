@@ -11,7 +11,6 @@
   /* Color Palette */
   --bg-main: #08090B;
   --bg-card: rgba(18, 18, 22, 0.72);
-  --bg-card-hover: rgba(26, 26, 32, 0.85);
   --bg-elevated: rgba(255, 255, 255, 0.04);
   --bg-pill: rgba(255, 255, 255, 0.06);
   --bg-pill-hover: rgba(255, 255, 255, 0.1);
@@ -35,7 +34,6 @@
   /* Layout & Sizing */
   --container-max-width: 1200px;
   --radius-sm: 12px;
-  --radius-md: 18px;
   --radius-lg: 24px;
   --radius-xl: 28px;
   --radius-full: 9999px;
@@ -43,7 +41,6 @@
   /* Shadows */
   --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   --shadow-lifted: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.25);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1198,7 +1195,7 @@ img, svg {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-subtle);
   border-radius: 24px;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-soft);
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -1328,8 +1325,6 @@ img, svg {
 /* Delay helpers */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
 
 /* --------------------------------------------------------------------------
    14. RESPONSIVE DESIGN (BREAKPOINTS)
