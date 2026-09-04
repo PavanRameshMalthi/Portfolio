@@ -430,8 +430,190 @@
             </div>
           </article>
 
-          <!-- Project 2: AI Mock Interview -->
+          <!-- Project 2: AI-Powered Website Builder -->
           <article class="project-card fade-up delay-1">
+            <div class="project-image-container">
+              <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="AI-Powered Website Builder Interface Preview">
+                <defs>
+                  <linearGradient id="builderBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0e1017"/>
+                    <stop offset="100%" stop-color="#08090b"/>
+                  </linearGradient>
+                  <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8b5cf6"/>
+                    <stop offset="100%" stop-color="#6366f1"/>
+                  </linearGradient>
+                  <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#06b6d4"/>
+                    <stop offset="100%" stop-color="#3b82f6"/>
+                  </linearGradient>
+                  <filter id="builderShadow" x="-10%" y="-10%" width="120%" height="125%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+                  </filter>
+                </defs>
+                <rect width="800" height="500" fill="url(#builderBgGrad)"/>
+                
+                <!-- Subtle ambient grid lines -->
+                <g opacity="0.12" stroke="#ffffff" stroke-width="0.5">
+                  <line x1="0" y1="100" x2="800" y2="100"/>
+                  <line x1="0" y1="200" x2="800" y2="200"/>
+                  <line x1="0" y1="300" x2="800" y2="300"/>
+                  <line x1="0" y1="400" x2="800" y2="400"/>
+                  <line x1="160" y1="0" x2="160" y2="500"/>
+                  <line x1="320" y1="0" x2="320" y2="500"/>
+                  <line x1="480" y1="0" x2="480" y2="500"/>
+                  <line x1="640" y1="0" x2="640" y2="500"/>
+                </g>
+                
+                <!-- Ambient glows -->
+                <circle cx="680" cy="140" r="150" fill="#8b5cf6" opacity="0.12"/>
+                <circle cx="150" cy="380" r="130" fill="#06b6d4" opacity="0.08"/>
+                
+                <!-- App Window Container -->
+                <rect x="40" y="35" width="720" height="430" rx="20" fill="rgba(18, 18, 22, 0.88)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" filter="url(#builderShadow)"/>
+                
+                <!-- Window Header -->
+                <rect x="40" y="35" width="720" height="48" rx="20" fill="rgba(255, 255, 255, 0.02)"/>
+                <circle cx="70" cy="59" r="5" fill="#ef4444" opacity="0.8"/>
+                <circle cx="88" cy="59" r="5" fill="#f59e0b" opacity="0.8"/>
+                <circle cx="106" cy="59" r="5" fill="#10b981" opacity="0.8"/>
+                <rect x="290" y="47" width="220" height="24" rx="12" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                <text x="400" y="63" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="500" text-anchor="middle">ai-website-builder.app</text>
+                
+                <!-- Left Panel: Natural-Language Prompt Studio -->
+                <rect x="65" y="105" width="280" height="335" rx="14" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                <text x="85" y="135" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600">Prompt Studio</text>
+                <rect x="85" y="150" width="105" height="20" rx="10" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1"/>
+                <text x="137" y="164" fill="#a78bfa" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">✨ AI GENERATOR</text>
+                
+                <!-- Prompt Input Box Mockup -->
+                <rect x="85" y="182" width="240" height="88" rx="10" fill="rgba(0, 0, 0, 0.35)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+                <text x="97" y="204" fill="#f4f4f5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="500">&quot;Create a modern SaaS landing</text>
+                <text x="97" y="222" fill="#f4f4f5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="500">page with a dark hero section,</text>
+                <text x="97" y="240" fill="#f4f4f5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="500">responsive grid &amp; pricing cards&quot;</text>
+                <text x="97" y="258" fill="#38bdf8" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="500">Natural language converted to UI ⚡</text>
+                
+                <!-- Generation Status & Steps -->
+                <text x="85" y="295" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600">Generated Modules</text>
+                
+                <g transform="translate(85, 308)">
+                  <rect x="0" y="0" width="240" height="26" rx="6" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="14" cy="13" r="4" fill="#10b981"/>
+                  <text x="26" y="17" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="500">Hero Section &amp; Navbar</text>
+                  <text x="228" y="17" fill="#10b981" font-family="'Inter', -apple-system, sans-serif" font-size="9" text-anchor="end">Ready</text>
+                </g>
+                
+                <g transform="translate(85, 342)">
+                  <rect x="0" y="0" width="240" height="26" rx="6" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="14" cy="13" r="4" fill="#10b981"/>
+                  <text x="26" y="17" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="500">Feature Bento Grid</text>
+                  <text x="228" y="17" fill="#10b981" font-family="'Inter', -apple-system, sans-serif" font-size="9" text-anchor="end">Ready</text>
+                </g>
+                
+                <g transform="translate(85, 376)">
+                  <rect x="0" y="0" width="240" height="26" rx="6" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="14" cy="13" r="4" fill="#10b981"/>
+                  <text x="26" y="17" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="500">Pricing &amp; Call-to-Action</text>
+                  <text x="228" y="17" fill="#10b981" font-family="'Inter', -apple-system, sans-serif" font-size="9" text-anchor="end">Ready</text>
+                </g>
+                
+                <rect x="85" y="410" width="240" height="20" rx="6" fill="rgba(139, 92, 246, 0.15)"/>
+                <text x="205" y="424" fill="#a78bfa" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Instant 1-Click Code Export</text>
+                
+                <!-- Right Panel: Rendered Website Live Preview -->
+                <rect x="360" y="105" width="375" height="335" rx="14" fill="rgba(11, 12, 16, 0.95)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+                
+                <!-- Live Preview Header -->
+                <rect x="360" y="105" width="375" height="36" rx="14" fill="rgba(255, 255, 255, 0.02)"/>
+                <circle cx="380" cy="123" r="4" fill="#71717a"/>
+                <circle cx="394" cy="123" r="4" fill="#71717a"/>
+                <circle cx="408" cy="123" r="4" fill="#71717a"/>
+                <rect x="430" y="113" width="180" height="20" rx="6" fill="rgba(255, 255, 255, 0.05)"/>
+                <text x="520" y="127" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="9" text-anchor="middle">preview.mysite.com</text>
+                <rect x="670" y="113" width="50" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)"/>
+                <text x="695" y="127" fill="#10b981" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="600" text-anchor="middle">LIVE</text>
+                
+                <!-- Rendered Website Canvas Mockup -->
+                <!-- Mini Navbar -->
+                <g transform="translate(380, 153)">
+                  <rect x="0" y="0" width="335" height="24" rx="6" fill="rgba(255, 255, 255, 0.03)"/>
+                  <circle cx="12" cy="12" r="5" fill="url(#purpleGrad)"/>
+                  <text x="24" y="15" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="700">ApexAI</text>
+                  <text x="210" y="15" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8">Features</text>
+                  <text x="250" y="15" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8">Pricing</text>
+                  <rect x="285" y="4" width="42" height="16" rx="8" fill="url(#purpleGrad)"/>
+                  <text x="306" y="15" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">Sign Up</text>
+                </g>
+                
+                <!-- Mini Hero Section -->
+                <g transform="translate(380, 187)">
+                  <rect x="0" y="0" width="335" height="96" rx="10" fill="rgba(139, 92, 246, 0.08)" stroke="rgba(139, 92, 246, 0.15)" stroke-width="1"/>
+                  <rect x="110" y="12" width="115" height="14" rx="7" fill="rgba(139, 92, 246, 0.2)"/>
+                  <text x="167" y="22" fill="#c084fc" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="600" text-anchor="middle">✦ Modern AI Workspace</text>
+                  <text x="167" y="46" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Build Fast. Ship Smarter.</text>
+                  <text x="167" y="62" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="9" text-anchor="middle">Empowering modern teams with instantaneous AI site generation</text>
+                  <rect x="127" y="72" width="80" height="18" rx="9" fill="url(#purpleGrad)"/>
+                  <text x="167" y="84" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="600" text-anchor="middle">Get Started Free</text>
+                </g>
+                
+                <!-- Mini Bento Cards -->
+                <g transform="translate(380, 291)">
+                  <rect x="0" y="0" width="105" height="74" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="20" cy="18" r="8" fill="rgba(139, 92, 246, 0.2)"/>
+                  <text x="20" y="21" fill="#c084fc" font-size="9" text-anchor="middle">⚡</text>
+                  <text x="14" y="40" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600">Zero-Config</text>
+                  <text x="14" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8">Instant build &amp; deploy</text>
+                  
+                  <rect x="115" y="0" width="105" height="74" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="135" cy="18" r="8" fill="rgba(6, 182, 212, 0.2)"/>
+                  <text x="135" y="21" fill="#22d3ee" font-size="9" text-anchor="middle">📱</text>
+                  <text x="129" y="40" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600">Responsive</text>
+                  <text x="129" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8">Mobile-first layouts</text>
+                  
+                  <rect x="230" y="0" width="105" height="74" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+                  <circle cx="250" cy="18" r="8" fill="rgba(16, 185, 129, 0.2)"/>
+                  <text x="250" y="21" fill="#34d399" font-size="9" text-anchor="middle">🎨</text>
+                  <text x="244" y="40" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="600">Tailwind CSS</text>
+                  <text x="244" y="54" fill="#a1a1aa" font-family="'Inter', -apple-system, sans-serif" font-size="8">Clean utility styling</text>
+                </g>
+                
+                <!-- Right Bottom Status Bar -->
+                <g transform="translate(380, 375)">
+                  <rect x="0" y="0" width="335" height="55" rx="10" fill="rgba(139, 92, 246, 0.06)" stroke="rgba(139, 92, 246, 0.2)" stroke-width="1"/>
+                  <text x="16" y="24" fill="#a78bfa" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600">✨ Natural Language to Production Website</text>
+                  <text x="16" y="42" fill="#d4d4d8" font-family="'Inter', -apple-system, sans-serif" font-size="10">Generates clean semantic HTML, Tailwind styling, and React components</text>
+                </g>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-category">AI / Full-Stack</span>
+                <span style="font-size: 0.8rem; color: var(--text-tertiary);">2026</span>
+              </div>
+              <h3 class="project-title">AI-Powered Website Builder</h3>
+              <p class="project-desc">
+                An AI-powered platform that helps users create modern, responsive websites from natural-language prompts, making website development faster and more accessible for individuals and small businesses.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Gemini AI</span>
+                <span class="tech-badge">REST API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/PavanRameshMalthi/AI-Powered-Website-Builder.git" target="_blank" rel="noopener noreferrer" class="btn-project code" aria-label="View AI-Powered Website Builder on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: AI Mock Interview -->
+          <article class="project-card fade-up">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="AI Mock Interview Platform Interface Preview">
                 <defs>
@@ -536,8 +718,8 @@
             </div>
           </article>
 
-          <!-- Project 3: Resume Builder -->
-          <article class="project-card fade-up">
+          <!-- Project 4: Resume Builder -->
+          <article class="project-card fade-up delay-1">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Resume Builder Application Preview">
                 <defs>
@@ -644,8 +826,8 @@
             </div>
           </article>
 
-          <!-- Project 4: Weather Application -->
-          <article class="project-card fade-up delay-1">
+          <!-- Project 5: Weather Application -->
+          <article class="project-card fade-up">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Weather Tracker Application Preview">
                 <defs>
@@ -757,8 +939,8 @@
             </div>
           </article>
 
-          <!-- Project 5: CGPA Calculator -->
-          <article class="project-card fade-up">
+          <!-- Project 6: CGPA Calculator -->
+          <article class="project-card fade-up delay-1">
             <div class="project-image-container">
               <svg class="project-image" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin slice" role="img" aria-label="CGPA Calculator Application Preview">
                 <defs>
